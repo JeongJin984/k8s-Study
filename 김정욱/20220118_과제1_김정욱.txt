@@ -1,0 +1,121 @@
+20220118_과제1_김정욱
+
+1. 사용자 생성시 기본값을 아래와 같이 변경하시오.
+	디렉토리 : /home2
+	로그인 쉘 : /bin/sh
+
+<실습 결과>
+[root@localhost worklog]# useradd -D -b /home2 -s /bin/sh
+[root@localhost worklog]#
+[root@localhost worklog]# cat /etc/default/useradd
+[root@localhost worklog]# useradd defaults file
+GROUP=100
+HOME=/home2
+INACTIVE=-1
+EXPIRE=
+SHELL=/bin/sh
+SKEL=/etc/skel
+CREATE_MAIL_SPOOL=yes
+
+
+
+2. 사용자를 아래 정보와 같이 생성하시오.
+
+username       UID        기본그룹   보조그룹	     홈디렉토리        로그인쉘
+work10          1010       work10    wheel     /home2/work10     /bin/bash
+work11          1012       work11    work10    /home2/work11    /bin/tcsh
+
+<실습 결과>
+[root@localhost worklog]# useradd -u 1010 -U -G wheel work10
+[root@localhost worklog]#
+[root@localhost worklog]# useradd -u 1012 -U -G work10 -s /bin/tcsh work11
+[root@localhost worklog]#
+[root@localhost worklog]# egrep 'work10|work11' /etc/passwd
+work10:x:1010:1010::/home2/work10:/bin/sh
+work11:x:1012:1012::/home2/work11:/bin/tcsh
+[root@localhost worklog]#
+[root@localhost worklog]# egrep 'work10|work11' /etc/group
+wheel:x:10:user,work10
+work10:x:1010:work11
+work11:x:1012:
+[root@localhost worklog]#
+
+
+
+3. 사용자를 아래 정보와 같이 수정하시오.
+
+username comment   UID    기본그룹   보조그룹	      홈디렉토리             로그인쉘
+work10     work10   1010     work10   thunder,wheel  /newhome/work10    /bin/bash
+work11     work11   1012     work11   thunder	      /newhome/work11    /bin/bash 
+
+<실습 결과>
+[root@localhost worklog]# mkdir /newhome
+[root@localhost worklog]#
+[root@localhost worklog]# ls /
+bin  boot  dev  etc  home  home2  lib  lib64  media  mnt  newhome  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@localhost worklog]#
+[root@localhost worklog]# usermod -aG thunder -d /newhome/work10
+usermod: group 'thunder' does not exist
+[root@localhost worklog]#
+[root@localhost worklog]# grep thunder /etc/group
+[root@localhost worklog]#
+[root@localhost worklog]# groupadd thunder
+[root@localhost worklog]#
+[root@localhost worklog]# usermod -aG thunder -d /newhome/work10 work10
+[root@localhost worklog]#
+[root@localhost worklog]#
+[root@localhost worklog]# usermod -c work10 work10
+[root@localhost worklog]#
+[root@localhost worklog]# usermod -c work11 -G thunder -d /newhome/work11 -s /bin/bash work11
+[root@localhost worklog]#
+[root@localhost worklog]# egrep 'work10|work11' /etc/passwd
+work10:x:1010:1010:work10:/newhome/work10:/bin/sh
+work11:x:1012:1012:work11:/newhome/work11:/bin/bash
+[root@localhost worklog]#
+[root@localhost worklog]#
+[root@localhost worklog]# egrep 'work10|work11' /etc/group
+wheel:x:10:user,work10
+work10:x:1010:
+work11:x:1012:
+thunder:x:1013:work10,work11
+[root@localhost worklog]#
+
+
+
+
+4. /usr/bin/cat 파일을 /work/20220118/homework/ 디렉터리에 복사 한 후 root 사용자의 권한으로 실행될 수 있도록 SetUID를 지정하시오.
+
+<실습 결과>
+[root@localhost worklog]#
+[root@localhost worklog]#
+[root@localhost worklog]# cp /usr/bin/cat /work/20220118/homework/
+[root@localhost worklog]#
+[root@localhost worklog]#
+[root@localhost worklog]# rmdir /work20220118
+[root@localhost worklog]#
+[root@localhost worklog]#
+[root@localhost worklog]#
+[root@localhost worklog]# ll /work/20220118/homework/cat
+-rwxr-xr-x. 1 root root 54080 Jan 18 17:44 /work/20220118/homework/cat
+[root@localhost worklog]#
+[root@localhost worklog]#
+[root@localhost worklog]# chmod u+s /work/20220118/homework/cat
+[root@localhost worklog]#
+[root@localhost worklog]#
+[root@localhost worklog]# ll /work/20220118/homework/cat
+-rwsr-xr-x. 1 root root 54080 Jan 18 17:44 /work/20220118/homework/cat
+[root@localhost worklog]#
+[root@localhost worklog]#
+
+
+
+5. 7월 매주 금요일 오전 9시부터 오후 5시까지 'ps -ef'의 실행결과를 /work/pslist.txt로 누적하여 저장하세요.
+
+#crontab에 추가
+* 9-17 * 7 5 ps -ef >> /work/pslist.txt
+
+
+6. 매주 월,수,금요일 오후 1시~7시 정각에 helloworld 를 /work/greeting.txt 에 누적하여 저장하세요.
+
+#crontab에 추가
+0 13-19 * * 1,3,5 echo helloworld >> /work/greeting.txt
