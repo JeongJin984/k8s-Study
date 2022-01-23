@@ -1,0 +1,286 @@
+Script started on Fri 21 Jan 2022 04:27:04 PM KST
+]0;root@linux2:~/worklog[?1034h[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmcli connection show
+[?1h=NAME    UUID                                  TYPE      DEVICE [m
+[32menp0s3[0m  [32m80d9eebc-be13-4198-b0ef-277900718fa1[0m  [32methernet[0m  [32menp0s3[0m [m
+[32menp0s8[0m  [32ma22d80e9-66ee-46b0-a81c-54c56081bcd3[0m  [32methernet[0m  [32menp0s8[0m [m
+[32mvirbr0[0m  [32me8431133-af41-4b5b-a7d6-51a502b39862[0m  [32mbridge[0m    [32mvirbr0[0m [m
+[K[?1l>]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmcli connection show[K[K[K[Kadd con-name test1 type ethernet ifname enp0s3
+Connection 'test1' (4811c7fd-d69c-4cbc-a10b-416980f29764) successfully added.
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmcli connection add con-name test1 type ethernet ifname enp0s3[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cshow[K
+[?1h=NAME    UUID                                  TYPE      DEVICE [m
+[32menp0s3[0m  [32m80d9eebc-be13-4198-b0ef-277900718fa1[0m  [32methernet[0m  [32menp0s3[0m [m
+[32menp0s8[0m  [32ma22d80e9-66ee-46b0-a81c-54c56081bcd3[0m  [32methernet[0m  [32menp0s8[0m [m
+[32mvirbr0[0m  [32me8431133-af41-4b5b-a7d6-51a502b39862[0m  [32mbridge[0m    [32mvirbr0[0m [m
+test1   4811c7fd-d69c-4cbc-a10b-416980f29764  ethernet  --     [m
+[K[?1l>]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmcli connection modify test1 ipv4.addresses 10.0.2.12/24
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmcli connection modify test1 ipv4.gae[Kteway 10.0.2.1
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmcli connection modify test1 ipv4.gateway 10.0.2.1[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kdns 8.8.8.8
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmb[Kcli connection modify test1 ip
+ip4                      ipv4.dns-priority        ipv4.routing-rules       ipv6.ignore-auto-dns
+ip6                      ipv4.dns-search          ipv6.addresses           ipv6.ignore-auto-routes
+ipv4.addresses           ipv4.gateway             ipv6.addr-gen-mode       ipv6.ip6-privacy
+ipv4.dad-timeout         ipv4.ignore-auto-dns     ipv6.dhcp-duid           ipv6.may-fail
+ipv4.dhcp-client-id      ipv4.ignore-auto-routes  ipv6.dhcp-hostname       ipv6.method
+ipv4.dhcp-fqdn           ipv4.may-fail            ipv6.dhcp-send-hostname  ipv6.never-default
+ipv4.dhcp-hostname       ipv4.method              ipv6.dns                 ipv6.route-metric
+ipv4.dhcp-send-hostname  ipv4.never-default       ipv6.dns-options         ipv6.routes
+ipv4.dhcp-timeout        ipv4.route-metric        ipv6.dns-priority        ipv6.route-table
+ipv4.dns                 ipv4.routes              ipv6.dns-search          ipv6.routing-rules
+ipv4.dns-options         ipv4.route-table         ipv6.gateway             ipv6.token
+[root@linux2 worklog]# nmcli connection modify test1 ipv4.method manual
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmcli connection modify test1 ipv4.method manual[2Pdns 8.8.8.8gateway 10.0.2.1addresses 10.0.2.12/24show[Kadd con-name test1 type ethernet ifname enp0s3[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cshow[K
+[?1h=NAME    UUID                                  TYPE      DEVICE [m
+[32menp0s3[0m  [32m80d9eebc-be13-4198-b0ef-277900718fa1[0m  [32methernet[0m  [32menp0s3[0m [m
+[32menp0s8[0m  [32ma22d80e9-66ee-46b0-a81c-54c56081bcd3[0m  [32methernet[0m  [32menp0s8[0m [m
+[32mvirbr0[0m  [32me8431133-af41-4b5b-a7d6-51a502b39862[0m  [32mbridge[0m    [32mvirbr0[0m [m
+test1   4811c7fd-d69c-4cbc-a10b-416980f29764  ethernet  --     [m
+[K[?1l>]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmcli connection show test1
+[?1h=connection.id:                          test1[m
+connection.uuid:                        4811c7fd-d69c-4cbc-a10b-416980f29764[m
+connection.stable-id:                   --[m
+connection.type:                        802-3-ethernet[m
+connection.interface-name:              enp0s3[m
+connection.autoconnect:                 yes[m
+connection.autoconnect-priority:        0[m
+connection.autoconnect-retries:         -1 (default)[m
+connection.multi-connect:               0 (default)[m
+connection.auth-retries:                -1[m
+connection.timestamp:                   0[m
+connection.read-only:                   no[m
+connection.permissions:                 --[m
+connection.zone:                        --[m
+connection.master:                      --[m
+connection.slave-type:                  --[m
+connection.autoconnect-slaves:          -1 (default)[m
+connection.secondaries:                 --[m
+connection.gateway-ping-timeout:        0[m
+connection.metered:                     unknown[m
+connection.lldp:                        default[m
+connection.mdns:                        -1 (default)[m
+connection.llmnr:                       -1 (default)[m
+802-3-ethernet.port:                    --[m
+802-3-ethernet.speed:                   0[m
+802-3-ethernet.duplex:                  --[m
+802-3-ethernet.auto-negotiate:          no[m
+802-3-ethernet.mac-address:             --[m
+802-3-ethernet.cloned-mac-address:      --[m
+802-3-ethernet.generate-mac-address-mask:--[m
+802-3-ethernet.mac-address-blacklist:   --[m
+802-3-ethernet.mtu:                     auto[m
+802-3-ethernet.s390-subchannels:        --[m
+802-3-ethernet.s390-nettype:            --[m
+802-3-ethernet.s390-options:            --[m
+802-3-ethernet.wake-on-lan:             default[m
+802-3-ethernet.wake-on-lan-password:    --[m
+ipv4.method:                            manual[m
+ipv4.dns:                               8.8.8.8[m
+ipv4.dns-search:                        --[m
+ipv4.dns-options:                       ""[m
+ipv4.dns-priority:                      0[m
+ipv4.addresses:                         10.0.2.12/24[m
+ipv4.gateway:                           10.0.2.1[m
+ipv4.routes:                            --[m
+ipv4.route-metric:                      -1[m
+ipv4.route-table:                       0 (unspec)[m
+ipv4.routing-rules:                     --[m
+ipv4.ignore-auto-routes:                no[m
+ipv4.ignore-auto-dns:                   no[m
+ipv4.dhcp-client-id:                    --[m
+ipv4.dhcp-timeout:                      0 (default)[m
+[7mlines 1-52[27m[K[K [KESCESC[KOO[KBB[Kipv4.dhcp-send-hostname:                yes[m
+[7mlines 2-53[27m[K[K [KESCESC[KOO[KBB[Kipv4.dhcp-hostname:                     --[m
+[7mlines 3-54[27m[K[K [KESCESC[KOO[KBB[Kipv4.dhcp-fqdn:                         --[m
+[7mlines 4-55[27m[K[K [KESCESC[KOO[KBB[Kipv4.never-default:                     no[m
+[7mlines 5-56[27m[K[K [KESCESC[KOO[KBB[Kipv4.may-fail:                          yes[m
+[7mlines 6-57[27m[K[K [KESCESC[KOO[KBB[Kipv4.dad-timeout:                       -1 (default)[m
+[7mlines 7-58[27m[K[K [KESCESC[KOO[KBB[Kipv6.method:                            auto[m
+[7mlines 8-59[27m[K[K [KESCESC[KOO[KBB[Kipv6.dns:                               --[m
+[7mlines 9-60[27m[K[K [KESCESC[KOO[KBB[Kipv6.dns-search:                        --[m
+[7mlines 10-61[27m[K[K [KESCESC[KOO[KBB[Kipv6.dns-options:                       ""[m
+[7mlines 11-62[27m[K[K [KESCESC[KOO[KBB[Kipv6.dns-priority:                      0[m
+[7mlines 12-63[27m[K[K [KESCESC[KOO[KBB[Kipv6.addresses:                         --[m
+[7mlines 13-64[27m[K[K [KESCESC[KOO[KBB[Kipv6.gateway:                           --[m
+[7mlines 14-65[27m[K[K [KESCESC[KOO[KBB[Kipv6.routes:                            --[m
+[7mlines 15-66[27m[K[K [KESCESC[KOO[KBB[Kipv6.route-metric:                      -1[m
+[7mlines 16-67[27m[K[K [KESCESC[KOO[KBB[Kipv6.route-table:                       0 (unspec)[m
+[7mlines 17-68[27m[K[K [KESCESC[KOO[KBB[Kipv6.routing-rules:                     --[m
+[7mlines 18-69[27m[K[K [KESCESC[KOO[KBB[Kipv6.ignore-auto-routes:                no[m
+[7mlines 19-70[27m[K[K [KESCESC[KOO[KBB[Kipv6.ignore-auto-dns:                   no[m
+[7mlines 20-71[27m[K[K [KESCESC[KOO[KBB[Kipv6.never-default:                     no[m
+[7mlines 21-72[27m[K[K [KESCESC[KOO[KBB[Kipv6.may-fail:                          yes[m
+[7mlines 22-73[27m[K[K [KESCESC[KOO[KBB[Kipv6.ip6-privacy:                       -1 (unknown)[m
+[7mlines 23-74[27m[K[K [KESCESC[KOO[KBB[Kipv6.addr-gen-mode:                     stable-privacy[m
+[7mlines 24-75[27m[K[K [KESCESC[KOO[KBB[Kipv6.dhcp-duid:                         --[m
+[7mlines 25-76[27m[K[K [KESCESC[KOO[KBB[Kipv6.dhcp-send-hostname:                yes[m
+[7mlines 26-77[27m[K[K [KESCESC[KOO[KBB[Kipv6.dhcp-hostname:                     --[m
+[7mlines 27-78[27m[K[K [KESCESC[KOO[KBB[Kipv6.token:                             --[m
+[7mlines 28-79[27m[K[K [KESCESC[KOO[KBB[Kproxy.method:                           none[m
+[7mlines 29-80[27m[K[K [KESCESC[KOO[KBB[Kproxy.browser-only:                     no[m
+[7mlines 30-81[27m[K[K[?1l>]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmcli connection show test1[K[K[K[K[K[K[K[K[K[Kup test1
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/5)
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# nmcli connection up test1[2@show[C[C[C[C[C[C[K[K[K[K[K[K
+[?1h=NAME    UUID                                  TYPE      DEVICE [m
+[32mtest1[0m   [32m4811c7fd-d69c-4cbc-a10b-416980f29764[0m  [32methernet[0m  [32menp0s3[0m [m
+[32menp0s8[0m  [32ma22d80e9-66ee-46b0-a81c-54c56081bcd3[0m  [32methernet[0m  [32menp0s8[0m [m
+[32mvirbr0[0m  [32me8431133-af41-4b5b-a7d6-51a502b39862[0m  [32mbridge[0m    [32mvirbr0[0m [m
+enp0s3  80d9eebc-be13-4198-b0ef-277900718fa1  ethernet  --     [m
+[K[?1l>]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# ip address show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 08:00:27:ba:10:23 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.12/24 brd 10.0.2.255 scope global noprefixroute enp0s3
+       valid_lft forever preferred_lft forever
+    inet6 fe80::2e51:3083:a317:52c4/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 08:00:27:3c:0d:3c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.56.103/24 brd 192.168.56.255 scope global noprefixroute dynamic enp0s8
+       valid_lft 382sec preferred_lft 382sec
+    inet6 fe80::d9c8:10b9:329:bdbd/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 52:54:00:67:0a:d1 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+5: virbr0-nic: <BROADCAST,MULTICAST> mtu 1500 qdisc pfifo_fast master virbr0 state DOWN group default qlen 1000
+    link/ether 52:54:00:67:0a:d1 brd ff:ff:ff:ff:ff:ff
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# ipconfig
+bash: ipconfig: command not found...
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# ifconfig
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.12  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::2e51:3083:a317:52c4  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:ba:10:23  txqueuelen 1000  (Ethernet)
+        RX packets 94  bytes 26813 (26.1 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 112  bytes 14651 (14.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.56.103  netmask 255.255.255.0  broadcast 192.168.56.255
+        inet6 fe80::d9c8:10b9:329:bdbd  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:3c:0d:3c  txqueuelen 1000  (Ethernet)
+        RX packets 1967  bytes 402866 (393.4 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 543  bytes 70081 (68.4 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 88  bytes 7464 (7.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 88  bytes 7464 (7.2 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:67:0a:d1  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+]0;root@linux2:~/worklog[root@linux2 worklog]# ping -c 1 www.google.com
+PING www.google.com (142.250.196.132) 56(84) bytes of data.
+64 bytes from nrt12s36-in-f4.1e100.net (142.250.196.132): icmp_seq=1 ttl=54 time=45.4 ms
+
+--- www.google.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 45.468/45.468/45.468/0.000 ms
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# ping -c 1 www.google.com[K[K[K[K[K[K[K[K[K[K[K[K[K[K10.0.2.11
+PING 10.0.2.11 (10.0.2.11) 56(84) bytes of data.
+64 bytes from 10.0.2.11: icmp_seq=1 ttl=64 time=0.511 ms
+
+--- 10.0.2.11 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.511/0.511/0.511/0.000 ms
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# ping -c 1 10.0.2.11[C[1P 10.0.2.11[1P10.0.2.11[1P 10.0.2.11[1P 10.0.2.11[1P10.0.2.11[1P 10.0.2.11[1P 10.0.2.11[1P 10.0.2.11[1P 10.0.2.11s 10.0.2.11s 10.0.2.11h 10.0.2.11
+The authenticity of host '10.0.2.11 (10.0.2.11)' can't be established.
+ECDSA key fingerprint is SHA256:InPZq1lhkJnJ/YOQTJ14gY+2Gqd91JRsLEewy13Y8Ew.
+ECDSA key fingerprint is MD5:b8:d0:e7:cc:7a:a3:bb:ea:7c:2f:88:c2:b2:d2:37:2e.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.0.2.11' (ECDSA) to the list of known hosts.
+root@10.0.2.11's password: 
+Last login: Fri Jan 21 16:19:36 2022 from 192.168.56.1
+]0;root@linux1:~[?1034h[root@linux1 ~]# 
+]0;root@linux1:~[root@linux1 ~]# 
+]0;root@linux1:~[root@linux1 ~]# 
+]0;root@linux1:~[root@linux1 ~]# logout
+Connection to 10.0.2.11 closed.
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# hostnamectl set-hostname linux2.example.com
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# hostname
+linux2.example.com
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# 
+]0;root@linux2:~/worklog[root@linux2 worklog]# [K[root@linux2 worklog]# su - user
+Last login: Fri Jan 21 17:08:12 KST 2022 from 10.0.2.11 on pts/3
+]0;user@linux2:~[?1034h[user@linux2 ~]$ 
+]0;user@linux2:~[user@linux2 ~]$ 
+]0;user@linux2:~[user@linux2 ~]$ 
+]0;user@linux2:~[user@linux2 ~]$ ls ~/.x[Kssh/
+authorized_keys
+]0;user@linux2:~[user@linux2 ~]$ ls ~/.ssh/[C ~/.ssh/- ~/.ssh/l ~/.ssh/
+total 4
+-rw-------. 1 user user 404 Jan 21 17:34 authorized_keys
+]0;user@linux2:~[user@linux2 ~]$ 
+]0;user@linux2:~[user@linux2 ~]$ 
+]0;user@linux2:~[user@linux2 ~]$ 
+]0;user@linux2:~[user@linux2 ~]$ ls -l ~/.ssh/authorized_keys [C[1P[1P[1P[1P[1P[1@c[1@a[1@t
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDxnH04Vt0t2o4JpmzWQ9KFvCxTAGCcVt/CeO+S0lJ2dAZKbbxuDfIjk0+iUPrjlmDxvkz/kRWDumiiay9xZAaV1WItOiXfRS05PZITZAXm6fIPby6O6PTUT1iIHxLQU8xEkAj3pU1q/OYsGY2Wygbj57kA1rCC45r4XtF2EpmJAKWoQNH2iKY8XbN6metMAlAbG2lfH0rnm8PrMCMQyWze3E6Fl4UTyK2fFcSczmBZOHbidYaBy5VI1vGU0P0Ufk4Aik6LyGQSiVMO5MjB1+F+xm4pZdtrWstP0td5LURQVwchqoOmxoKVB5cy5LwJ+Uu6Mn5IQAhsczH+QUF4Ryo1 user@linux.example.com
+]0;user@linux2:~[user@linux2 ~]$ [K[user@linux2 ~]$ 

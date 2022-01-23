@@ -1,0 +1,1047 @@
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]# ls -l /dev/sd*
+brw-rw----. 1 root disk 8,  0 Jan 20 12:10 /dev/sda
+brw-rw----. 1 root disk 8,  1 Jan 20 12:10 /dev/sda1
+brw-rw----. 1 root disk 8,  2 Jan 20 12:10 /dev/sda2
+brw-rw----. 1 root disk 8, 16 Jan 20 12:10 /dev/sdb
+[root@localhost ~]# fdisk /dev/sdb
+Welcome to fdisk (util-linux 2.23.2).
+
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Device does not contain a recognized partition table
+Building a new DOS disklabel with disk identifier 0xcea9113c.
+
+Command (m for help): n
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (2048-8388607, default 2048): 1024
+Value out of range.
+First sector (2048-8388607, default 2048): ^C
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]# fdisk /dev/sdb
+Welcome to fdisk (util-linux 2.23.2).
+
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Device does not contain a recognized partition table
+Building a new DOS disklabel with disk identifier 0x2c5adc10.
+
+Command (m for help): n
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (2048-8388607, default 2048):
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-8388607, default 8388607): +1G
+Partition 1 of type Linux and of size 1 GiB is set
+
+Command (m for help): n
+Partition type:
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended
+Select (default p): p
+Partition number (2-4, default 2):
+First sector (2099200-8388607, default 2099200):
+Using default value 2099200
+Last sector, +sectors or +size{K,M,G} (2099200-8388607, default 8388607): +1G
+Partition 2 of type Linux and of size 1 GiB is set
+
+Command (m for help): n
+Partition type:
+   p   primary (2 primary, 0 extended, 2 free)
+   e   extended
+Select (default p): p
+Partition number (3,4, default 3):
+First sector (4196352-8388607, default 4196352):
+Using default value 4196352
+Last sector, +sectors or +size{K,M,G} (4196352-8388607, default 8388607): 1G
+Value out of range.
+Last sector, +sectors or +size{K,M,G} (4196352-8388607, default 8388607): 500M
+Value out of range.
+Last sector, +sectors or +size{K,M,G} (4196352-8388607, default 8388607): +1G
+Partition 3 of type Linux and of size 1 GiB is set
+
+Command (m for help): n
+Partition type:
+   p   primary (3 primary, 0 extended, 1 free)
+   e   extended
+Select (default e): p
+Selected partition 4
+First sector (6293504-8388607, default 6293504):
+Using default value 6293504
+Last sector, +sectors or +size{K,M,G} (6293504-8388607, default 8388607):
+Using default value 8388607
+Partition 4 of type Linux and of size 1023 MiB is set
+
+Command (m for help): m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   g   create a new empty GPT partition table
+   G   create an IRIX (SGI) partition table
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): L
+
+ 0  Empty           24  NEC DOS         81  Minix / old Lin bf  Solaris
+ 1  FAT12           27  Hidden NTFS Win 82  Linux swap / So c1  DRDOS/sec (FAT-
+ 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-
+ 3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden C:  c6  DRDOS/sec (FAT-
+ 4  FAT16 <32M      40  Venix 80286     85  Linux extended  c7  Syrinx
+ 5  Extended        41  PPC PReP Boot   86  NTFS volume set da  Non-FS data
+ 6  FAT16           42  SFS             87  NTFS volume set db  CP/M / CTOS / .
+ 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Dell Utility
+ 8  AIX             4e  QNX4.x 2nd part 8e  Linux LVM       df  BootIt
+ 9  AIX bootable    4f  QNX4.x 3rd part 93  Amoeba          e1  DOS access
+ a  OS/2 Boot Manag 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O
+ b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor
+ c  W95 FAT32 (LBA) 52  CP/M            a0  IBM Thinkpad hi eb  BeOS fs
+ e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         ee  GPT
+ f  W95 Ext'd (LBA) 54  OnTrackDM6      a6  OpenBSD         ef  EFI (FAT-12/16/
+10  OPUS            55  EZ-Drive        a7  NeXTSTEP        f0  Linux/PA-RISC b
+11  Hidden FAT12    56  Golden Bow      a8  Darwin UFS      f1  SpeedStor
+12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f4  SpeedStor
+14  Hidden FAT16 <3 61  SpeedStor       ab  Darwin boot     f2  DOS secondary
+16  Hidden FAT16    63  GNU HURD or Sys af  HFS / HFS+      fb  VMware VMFS
+17  Hidden HPFS/NTF 64  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE
+18  AST SmartSleep  65  Novell Netware  b8  BSDI swap       fd  Linux raid auto
+1b  Hidden W95 FAT3 70  DiskSecure Mult bb  Boot Wizard hid fe  LANstep
+1c  Hidden W95 FAT3 75  PC/IX           be  Solaris boot    ff  BBT
+1e  Hidden W95 FAT1 80  Old Minix
+
+Command (m for help): t
+Partition number (1-4, default 4): 1
+Hex code (type L to list all codes): 8e
+Changed type of partition 'Linux' to 'Linux LVM'
+
+Command (m for help): t
+Partition number (1-4, default 4): 2
+Hex code (type L to list all codes): 8e
+Changed type of partition 'Linux' to 'Linux LVM'
+
+Command (m for help): t
+Partition number (1-4, default 4): 3
+Hex code (type L to list all codes): 8e
+Changed type of partition 'Linux' to 'Linux LVM'
+
+Command (m for help): t
+Partition number (1-4, default 4):
+Hex code (type L to list all codes): 8e
+Changed type of partition 'Linux' to 'Linux LVM'
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]# partprobe /dev/sde
+Error: Could not stat device /dev/sde - No such file or directory.
+[root@localhost ~]# partprobe /dev/sdb
+[root@localhost ~]#
+[root@localhost ~]#
+
+Script started on Thu 20 Jan 2022 12:16:28 PM KST
+]0;root@localhost:~/worklog[?1034h[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# pvcreate /dev/sdb1
+  Physical volume "/dev/sdb1" successfully created.
+]0;root@localhost:~/worklog[root@localhost worklog]# pvcreate /dev/sdb1[K
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# pvcreate /dev/sdb1[K2
+  Physical volume "/dev/sdb2" successfully created.
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# pvcreate /dev/sdb2[K3
+  Physical volume "/dev/sdb3" successfully created.
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# pvcreate /dev/sdb3[K4
+  Physical volume "/dev/sdb4" successfully created.
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# pvdisplay
+  --- Physical volume ---
+  PV Name               /dev/sda2
+  VG Name               centos
+  PV Size               <19.00 GiB / not usable 3.00 MiB
+  Allocatable           yes (but full)
+  PE Size               4.00 MiB
+  Total PE              4863
+  Free PE               0
+  Allocated PE          4863
+  PV UUID               AYwl7E-DO19-lB7n-Xko1-192H-4XfL-YeyDy8
+   
+  "/dev/sdb3" is a new physical volume of "1.00 GiB"
+  --- NEW Physical volume ---
+  PV Name               /dev/sdb3
+  VG Name               
+  PV Size               1.00 GiB
+  Allocatable           NO
+  PE Size               0   
+  Total PE              0
+  Free PE               0
+  Allocated PE          0
+  PV UUID               U18SZO-Q4mZ-OxJ6-cW3I-S6R7-oxFl-dzVrAo
+   
+  "/dev/sdb2" is a new physical volume of "1.00 GiB"
+  --- NEW Physical volume ---
+  PV Name               /dev/sdb2
+  VG Name               
+  PV Size               1.00 GiB
+  Allocatable           NO
+  PE Size               0   
+  Total PE              0
+  Free PE               0
+  Allocated PE          0
+  PV UUID               E9tGC7-wfir-1Cz4-L0Kr-7iQt-o3d9-qjGjiJ
+   
+  "/dev/sdb4" is a new physical volume of "1023.00 MiB"
+  --- NEW Physical volume ---
+  PV Name               /dev/sdb4
+  VG Name               
+  PV Size               1023.00 MiB
+  Allocatable           NO
+  PE Size               0   
+  Total PE              0
+  Free PE               0
+  Allocated PE          0
+  PV UUID               02cIum-Zd40-hcm0-mmX1-t38j-C9n9-noSEeL
+   
+  "/dev/sdb1" is a new physical volume of "1.00 GiB"
+  --- NEW Physical volume ---
+  PV Name               /dev/sdb1
+  VG Name               
+  PV Size               1.00 GiB
+  Allocatable           NO
+  PE Size               0   
+  Total PE              0
+  Free PE               0
+  Allocated PE          0
+  PV UUID               RGJUeb-zvLd-BP13-KgWn-LC1n-SJ75-NdZMjc
+   
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# vgcreate VG_NAME[1@#[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C PB[KV...
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# #vgcreate VG_NAME PV...[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[Kvgname[K[K[K[Kmain /dev/sdb1 /dev/sdb2
+  Volume group "vgmain" successfully created
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# vgdisplay vgmain
+  --- Volume group ---
+  VG Name               vgmain
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  1
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                0
+  Open LV               0
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               1.99 GiB
+  PE Size               4.00 MiB
+  Total PE              510
+  Alloc PE / Size       0 / 0   
+  Free  PE / Size       510 / 1.99 GiB
+  VG UUID               uJYKM1-tLfh-yWsQ-Tuie-bAAt-2Nt1-H2t3iX
+   
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# lvcreate -n lvtest -L 0.5G vgmain
+  Logical volume "lvtest" created.
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# lvdisplay lvtest[K[K[K[K[K[K/dev/vgmain/lvtest 
+  --- Logical volume ---
+  LV Path                /dev/vgmain/lvtest
+  LV Name                lvtest
+  VG Name                vgmain
+  LV UUID                RrwKvT-XQHK-Vp3w-GXjN-tUeo-whCE-cTJq7C
+  LV Write Access        read/write
+  LV Creation host, time localhost.localdomain, 2022-01-20 12:29:13 +0900
+  LV Status              available
+  # open                 0
+  LV Size                512.00 MiB
+  Current LE             128
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     8192
+  Block device           253:2
+   
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# fdisk -l
+
+Disk /dev/sda: 21.5 GB, 21474836480 bytes, 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b33a5
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200    41943039    19921920   8e  Linux LVM
+
+Disk /dev/sdb: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x2c5adc10
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048     2099199     1048576   8e  Linux LVM
+/dev/sdb2         2099200     4196351     1048576   8e  Linux LVM
+/dev/sdb3         4196352     6293503     1048576   8e  Linux LVM
+/dev/sdb4         6293504     8388607     1047552   8e  Linux LVM
+
+Disk /dev/mapper/centos-root: 18.2 GB, 18249416704 bytes, 35643392 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/centos-swap: 2147 MB, 2147483648 bytes, 4194304 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/vgmain-lvtest: 536 MB, 536870912 bytes, 1048576 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# lvdi[K[K[K[Kmkfs -t ext4 [1@#[C[C[C[C[C[C[C[C[C[C[C[C[CDEVICE
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# #mkfs -t ext4 DEVICE[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K/dev/vg[C
+mkfs         mkfs.cramfs  mkfs.ext3    mkfs.fat     mkfs.msdos   mkfs.xfs     
+mkfs.btrfs   mkfs.ext2    mkfs.ext4    mkfs.minix   mkfs.vfat    
+[root@localhost worklog]# mkfs -t ext4 /dev/vg[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmain/lvtest
+mke2fs 1.42.9 (28-Dec-2013)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+32768 inodes, 131072 blocks
+6553 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=134217728
+4 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks: 
+	32768, 98304
+
+Allocating group tables: 0/4   done                            
+Writing inode tables: 0/4   done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: 0/4   done
+
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# fdisk -l
+
+Disk /dev/sda: 21.5 GB, 21474836480 bytes, 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b33a5
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200    41943039    19921920   8e  Linux LVM
+
+Disk /dev/sdb: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x2c5adc10
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048     2099199     1048576   8e  Linux LVM
+/dev/sdb2         2099200     4196351     1048576   8e  Linux LVM
+/dev/sdb3         4196352     6293503     1048576   8e  Linux LVM
+/dev/sdb4         6293504     8388607     1047552   8e  Linux LVM
+
+Disk /dev/mapper/centos-root: 18.2 GB, 18249416704 bytes, 35643392 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/centos-swap: 2147 MB, 2147483648 bytes, 4194304 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/vgmain-lvtest: 536 MB, 536870912 bytes, 1048576 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+]0;root@localhost:~/worklog[root@localhost worklog]# mkdir /mnt/lvtest
+]0;root@localhost:~/worklog[root@localhost worklog]# ls -l /mnt/
+total 0
+drwxr-xr-x. 2 root root 6 Jan 20 12:35 [0m[01;34mlvtest[0m
+]0;root@localhost:~/worklog[root@localhost worklog]# mount -t ext4 /dev/vgmain/lvtest /mnt/lvtest/[K
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# mount | grep /mnt/lvtest/[K
+/dev/mapper/vgmain-lvtest on [01;31m[K/mnt/lvtest[m[K type ext4 (rw,relatime,seclabel,data=ordered)
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# 
+]0;root@localhost:~/worklog[root@localhost worklog]# cd /mnt/vg[K[Klvtest/
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# ls -l
+total 16
+drwx------. 2 root root 16384 Jan 20 12:35 [0m[01;34mlost+found[0m
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# mkdir rootdir1
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# touch f[Krootfile1
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# vim ./rootfile1 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;53r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[53;1H"./rootfile1" 0L, 0C[>c[2;1H[1m[34m~                                                                                                        [3;1H~                                                                                                        [4;1H~                                                                                                        [5;1H~                                                                                                        [6;1H~                                                                                                        [7;1H~                                                                                                        [8;1H~                                                                                                        [9;1H~                                                                                                        [10;1H~                                                                                                        [11;1H~                                                                                                        [12;1H~                                                                                                        [13;1H~                                                                                                        [14;1H~                                                                                                        [15;1H~                                                                                                        [16;1H~                                                                                                        [17;1H~                                                                                                        [18;1H~                                                                                                        [19;1H~                                                                                                        [20;1H~                                                                                                        [21;1H~                                                                                                        [22;1H~                                                                                                        [23;1H~                                                                                                        [24;1H~                                                                                                        [25;1H~                                                                                                        [26;1H~                                                                                                        [27;1H~                                                                                                        [28;1H~                                                                                                        [29;1H~                                                                                                        [30;1H~                                                                                                        [31;1H~                                                                                                        [32;1H~                                                                                                        [33;1H~                                                                                                        [34;1H~                                                                                                        [35;1H~                                                                                                        [36;1H~                                                                                                        [37;1H~                                                                                                        [38;1H~                                                                                                        [39;1H~                                                                                                        [40;1H~                                                                                                        [41;1H~                                                                                                        [42;1H~                                                                                                        [43;1H~                                                                                                        [44;1H~                                                                                                        [45;1H~                                                                                                        [46;1H~                                                                                                        [47;1H~                                                                                                        [48;1H~                                                                                                        [49;1H~                                                                                                        [50;1H~                                                                                                        [51;1H~                                                                                                        [52;1H~                                                                                                        [m[53;88H0,0-1[9CAll[1;1H[?12l[?25h[?25l[53;1H[1m-- INSERT --[m[53;13H[K[53;88H0,1[11CAll[1;1H[?12l[?25h[?25l/[53;88H1,2[1;2H[?12l[?25h[?25lm[53;90H3[1;3H[?12l[?25h[?25ln[53;90H4[1;4H[?12l[?25h[?25lt[53;90H5[1;5H[?12l[?25h[?25l/[53;90H6[1;6H[?12l[?25h[?25ll[53;90H7[1;7H[?12l[?25h[?25lv[53;90H8[1;8H[?12l[?25h[?25lt[53;90H9[1;9H[?12l[?25h[?25le[53;90H10[1;10H[?12l[?25h[?25ls[53;91H1[1;11H[?12l[?25h[?25lt[53;91H2[1;12H[?12l[?25h[?25l[53;91H3-17[1;17H[?12l[?25h[?25l/[53;91H4-18[1;18H[?12l[?25h[?25ld[53;91H5-19[1;19H[?12l[?25h[?25le[53;91H6-20[1;20H[?12l[?25h[?25lv[53;91H7-21[1;21H[?12l[?25h[?25l/[53;91H8-22[1;22H[?12l[?25h[?25lv[53;91H9-23[1;23H[?12l[?25h[?25lg[53;90H20-24[1;24H[?12l[?25h[?25lm[53;91H1-25[1;25H[?12l[?25h[?25la[53;91H2-26[1;26H[?12l[?25h[?25li[53;91H3-27[1;27H[?12l[?25h[?25ln[53;91H4-28[1;28H[?12l[?25h[?25l/[53;91H5-29[1;29H[?12l[?25h[?25ll[53;91H6-30[1;30H[?12l[?25h[?25lv[53;91H7-31[1;31H[?12l[?25h[?25lt[53;91H8-32[1;32H[?12l[?25h[?25le[53;91H9-33[1;33H[?12l[?25h[?25ls[53;90H30-34[1;34H[?12l[?25h[?25lt[53;91H1-35[1;35H[?12l[?25h[?25l[2;1H[K[53;88H2,1    [2;1H[?12l[?25h[53;1H[K[2;1H[?25l[53;88H2,0-1[9CAll[2;1H[?12l[?25h[?25l[53;88H[K[53;1H:[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l"./rootfile1" 2L, 32C written
+[?1l>[?12l[?25h[?1049l]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# cat ./rootfile1 [K[K[K[K[K[K[K[K[Kootfile1 
+/mnt/lvtest	/dev/vgmain/lvtest
+
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# ls -l /etc/fstab 
+-rw-r--r--. 1 root root 465 Jan 10 11:55 /etc/fstab
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# vim /etc/fstab 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;53r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[53;1H"/etc/fstab" 11L, 465C[>c[2;1H[34m#
+# /etc/fstab
+# Created by anaconda on Mon Jan 10 11:55:28 2022
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#[m
+/dev/mapper/centos-root /[23C[32mxfs[m     [32mdefaults[m[8C[31m0 0[m
+[36mUUID[m[33m=[m[31maf60194d-b6f7-4159-bb91-29150ec73995[m /boot[19C[32mxfs[m     [32mdefaults[m[8C[31m0 0[m
+/dev/mapper/centos-swap [33mswap[m[20C[32mswap[m    [32mdefaults[m[8C[31m0 0[m
+[1m[34m~                                                                                                        [13;1H~                                                                                                        [14;1H~                                                                                                        [15;1H~                                                                                                        [16;1H~                                                                                                        [17;1H~                                                                                                        [18;1H~                                                                                                        [19;1H~                                                                                                        [20;1H~                                                                                                        [21;1H~                                                                                                        [22;1H~                                                                                                        [23;1H~                                                                                                        [24;1H~                                                                                                        [25;1H~                                                                                                        [26;1H~                                                                                                        [27;1H~                                                                                                        [28;1H~                                                                                                        [29;1H~                                                                                                        [30;1H~                                                                                                        [31;1H~                                                                                                        [32;1H~                                                                                                        [33;1H~                                                                                                        [34;1H~                                                                                                        [35;1H~                                                                                                        [36;1H~                                                                                                        [37;1H~                                                                                                        [38;1H~                                                                                                        [39;1H~                                                                                                        [40;1H~                                                                                                        [41;1H~                                                                                                        [42;1H~                                                                                                        [43;1H~                                                                                                        [44;1H~                                                                                                        [45;1H~                                                                                                        [46;1H~                                                                                                        [47;1H~                                                                                                        [48;1H~                                                                                                        [49;1H~                                                                                                        [50;1H~                                                                                                        [51;1H~                                                                                                        [52;1H~                                                                                                        [m[53;88H1,0-1[9CAll[1;1H[?12l[?25h[?25l[53;88H2,1  [2;1H[?12l[?25h[?25l[53;88H3[3;1H[?12l[?25h[?25l[53;88H4[4;1H[?12l[?25h[?25l[53;88H5[5;1H[?12l[?25h[?25l[53;88H6[6;1H[?12l[?25h[?25l[53;88H7[7;1H[?12l[?25h[?25l[53;88H8[8;1H[?12l[?25h[?25l[53;88H9[9;1H[?12l[?25h[?25l[53;88H10,1[10;1H[?12l[?25h[?25l[53;89H1[11;1H[?12l[?25h[?25l[53;91H75[11;75H[?12l[?25h[?25l[53;1H[1m-- INSERT --[m[53;14H[K[53;88H11,76[9CAll[11;76H[?12l[?25h[?25l[12;1H[K[53;89H2,1 [12;1H[?12l[?25h[?25l[13;1H[K[53;89H3[13;1H[?12l[?25h[?25l/[53;91H2[13;2H[?12l[?25h[?25l[31md[m[53;91H3[13;3H[?12l[?25h[?25l[31me[m[53;91H4[13;4H[?12l[?25h[?25l[32mdev[m[53;91H5[13;5H[?12l[?25h[?25l/[53;91H6[13;6H[?12l[?25h[?25l[31mv[m[53;91H7[13;7H[?12l[?25h[?25l[31mg[m[53;91H8[13;8H[?12l[?25h[?25l[31mm[m[53;91H9[13;9H[?12l[?25h[?25l[31ma[m[53;91H10[13;10H[?12l[?25h[?25l[31mi[m[53;92H1[13;11H[?12l[?25h[?25l[31mn[m[53;92H2[13;12H[?12l[?25h[?25l/[53;92H3[13;13H[?12l[?25h[?25l[31ml[m[53;92H4[13;14H[?12l[?25h[?25l[31mv[m[53;92H5[13;15H[?12l[?25h[?25l[31mt[m[53;92H6[13;16H[?12l[?25h[?25l[31me[m[53;92H7[13;17H[?12l[?25h[?25l[31ms[m[53;92H8[13;18H[?12l[?25h[?25l[31mt[m[53;92H9[13;19H[?12l[?25h[?25l/dev/vgmain/lvtest[53;91H20[13;20H[?12l[?25h[?25l/[53;92H1[13;21H[?12l[?25h[?25l[13;20H[K[53;92H0[13;20H[?12l[?25h[?25l[53;92H1-25[13;25H[?12l[?25h[?25l[53;92H0   [13;20H[?12l[?25h[?25l/[32mdev[m/[31mvgmain[m/[31mlvtest[m[53;91H19[13;19H[?12l[?25h[?25l/dev/vgmain/lvtest[53;91H20-25[13;25H[?12l[?25h[?25l/[53;92H1-26[13;26H[?12l[?25h[?25l[31mm[m[53;92H2-27[13;27H[?12l[?25h[?25l[31mn[m[53;92H3-28[13;28H[?12l[?25h[?25l[31mt[m[53;92H4-29[13;29H[?12l[?25h[?25l/[53;92H5-30[13;30H[?12l[?25h[?25l[31ml[m[53;92H6-31[13;31H[?12l[?25h[?25l[31mv[m[53;92H7-32[13;32H[?12l[?25h[?25l[31mt[m[53;92H8-33[13;33H[?12l[?25h[?25l[31me[m[53;92H9-34[13;34H[?12l[?25h[?25l[31ms[m[53;91H30-35[13;35H[?12l[?25h[?25l[31mt[m[53;92H1-36[13;36H[?12l[?25h[?25l[13;26Hmnt/lvtest[53;92H2-41[13;41H[?12l[?25h[?25l[53;92H3-49[13;49H[?12l[?25h[?25l[31me[m[53;92H4-50[13;50H[?12l[?25h[?25l[31mx[m[53;92H5-51[13;51H[?12l[?25h[?25l[31mt[m[53;92H6-52[13;52H[?12l[?25h[?25l[53;89H2,1    [12;1H[?12l[?25h[?25l[11;52r[52;1H
+[1;53r[11;1H/dev/mapper/centos-swap [33mswap[m[20C[32mswap[m    [32mdefaults[m[8C[31m0 0[m[52;1H[1m[34m~                                                                                                        [m[53;88H[K[53;88H11,76[9CAll[11;76H[?12l[?25h[?25l[53;89H2,36-52[12;52H[?12l[?25h[?25l[31m4[m[53;92H7-53[12;53H[?12l[?25h[?25l[32mext4[m[53;92H8-57[12;57H[?12l[?25h[?25l[31md[m[53;92H9-58[12;58H[?12l[?25h[?25l[31me[m[53;91H40-59[12;59H[?12l[?25h[?25l[31mf[m[53;92H1-60[12;60H[?12l[?25h[?25l[31ma[m[53;92H2-61[12;61H[?12l[?25h[?25l[31mu[m[53;92H3-62[12;62H[?12l[?25h[?25l[31ml[m[53;92H4-63[12;63H[?12l[?25h[?25l[31mt[m[53;92H5-64[12;64H[?12l[?25h[?25l[12;57H[32mdefaults[m[53;92H6-65[12;65H[?12l[?25h[?25l[53;92H7-73[12;73H[?12l[?25h[?25l[1m[37m[41m0[m[53;92H8-74[12;74H[?12l[?25h[?25l[1m[37m[41m [m[53;92H9-75[12;75H[?12l[?25h[?25l[31m0 0[m[53;91H50-76[12;76H[?12l[?25h[?25l[53;91H1    [12;1H[?12l[?25h[?25l[12;1H[K[13;1H/dev/vgmain/lvtest      /mnt/lvtest             [32mext4[m    [32mdefaults[m        [31m0 0[m[13;76H[K[53;89H3[13;1H[?12l[?25h[?25l[53;89H2[12;1H[?12l[?25h[?25l[34m#[m[53;91H2[12;2H[?12l[?25h[?25l[34mt[m[53;91H3[12;3H[?12l[?25h[?25l[34me[m[53;91H4[12;4H[?12l[?25h[?25l[34ms[m[53;91H5[12;5H[?12l[?25h[?25l[34mt[m[53;91H6[12;6H[?12l[?25h[53;1H[K[12;5H[?25l[53;88H12,5[10CAll[12;5H[?12l[?25h[?25l[53;88H[K[53;1H:[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l"/etc/fstab" 13L, 521C written
+[?1l>[?12l[?25h[?1049l]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# cat /etc/ft[Kstab 
+
+#
+# /etc/fstab
+# Created by anaconda on Mon Jan 10 11:55:28 2022
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/centos-root /                       xfs     defaults        0 0
+UUID=af60194d-b6f7-4159-bb91-29150ec73995 /boot                   xfs     defaults        0 0
+/dev/mapper/centos-swap swap                    swap    defaults        0 0
+#test
+/dev/vgmain/lvtest	/mnt/lvtest		ext4	defaults	0 0
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# 
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# umount /devs[K[K[K[Kmnt/lvtest 
+umount: /mnt/lvtest: target is busy.
+        (In some cases useful info about processes that use
+         the device is found by lsof(8) or fuser(1))
+]0;root@localhost:/mnt/lvtest[root@localhost lvtest]# cd
+]0;root@localhost:~[root@localhost ~]# cdumount /mnt/lvtest 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# lsof [K[K[K[K[Kumount /mnt/lvtest [Kls /mnt/lvtest/[K
+]0;root@localhost:~[root@localhost ~]# ls /mnt/lvtest[C /mnt/lvtest- /mnt/lvtestl /mnt/lvtest
+total 0
+]0;root@localhost:~[root@localhost ~]# ls -l /mnt/lvtest[K[K[K[K[K[K
+total 0
+drwxr-xr-x. 2 root root 6 Jan 20 12:35 [0m[01;34mlvtest[0m
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# mount | grep mnt/lvtest
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# mount | grep mnt/lvtest[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pls -l /mnt/lvtest[3P/mnt/lvtestumount /mnt/lvtest cd[Kumount /mnt/lvtest [4Pcat /etc/fstab[Cvim[C[C[C[C[C[C[C[C[C[C[C[C[2@ls -l[C[C[C[C[C[C[C[C[C[C[C[C[1Pcat ./rootfile1[Cvim[C[C[C[C[C[C[C[C[C[C[C[C[C[1Ptouch rootfile1[1Pmkdir rootdir1[9Pls -lcd /mnt/lvtest/[10Pls -lmkdir rootdir1touch rootfile1vim ./rootfile1 cat[C[C[C[C[C[C[C[C[C[C[C[C[C[1@ls -l /etc/fstab[C[2Pvim[C[C[C[C[C[C[C[C[C[C[C[Ccat[C[C[C[C[C[C[C[C[C[C[C[C[4@umount /mnt/lvtest[Ccd[Kumount /mnt/lvtest [4Pcat /etc/fstab[Cvim[C[C[C[C[C[C[C[C[C[C[C[C[2@ls -l[C[C[C[C[C[C[C[C[C[C[C[C[1Pcat ./rootfile1[Cvim[C[C[C[C[C[C[C[C[C[C[C[C[C[1Ptouch rootfile1[1Pmkdir rootdir1[9Pls -lcd /mnt/lvtest/mount | grep /mnt/lvtest[20@-t ext4 /dev/vgmain/lvtest[C[C[C[C[C[C[C[C[C[C[C[C
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# mount -t ext4 /dev/vgmain/lvtest /mnt/lvtest[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmount -t ext4 /dev/vgmain/lvtest /mnt/lvtest[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[21P| grep mnt/lvtest[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pls -l /mnt/lvtest[3P/mnt/lvtestumount /mnt/lvtest [C[K[K[K[K[K[K[K[K[K[K[K/dev/v[K[K[K[K[K[Kdev
+/dev                       /dev/mapper/vgmain-lvtest  /dev/sda1
+/dev/hugepages             /dev/mqueue                /dev/shm
+/dev/mapper/centos-root    /dev/pts                   
+[root@localhost ~]# umount /dev/vgmain/lvte[K[K[K[Klvtest
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# mount | grep /mnt/lvtest
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# mount /mnt/lvtest
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# mou[K[K[Kmount /mnt/lvtest| grep /mnt/lvtest
+/dev/mapper/vgmain-lvtest on [01;31m[K/mnt/lvtest[m[K type ext4 (rw,relatime,seclabel,data=ordered)
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# [K[root@localhost ~]# [K[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# mount | grep /mnt/lvtest[7P/mnt/lvtest| grep /mnt/lvtest[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kumount /dev/vgmain/lvtest
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# mount | grep /mnt/lvtest
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# lvremove /dev/vgmain/lvtest 
+Do you really want to remove active logical volume vgmain/lvtest? [y/n]: y
+  Logical volume "lvtest" successfully removed
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# vg[K[K
+]0;root@localhost:~[root@localhost ~]# vgremove [K[K[K[K[K[K[K[K[Kvgremove vgmain
+  Volume group "vgmain" successfully removed
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# pvremove /dev/sda2 [K[K[Kb4
+  Labels on physical volume "/dev/sdb4" successfully wiped.
+]0;root@localhost:~[root@localhost ~]# pvremove /dev/sdb4[K3
+  Labels on physical volume "/dev/sdb3" successfully wiped.
+]0;root@localhost:~[root@localhost ~]# pvremove /dev/sdb3[K2
+  Labels on physical volume "/dev/sdb2" successfully wiped.
+]0;root@localhost:~[root@localhost ~]# pvremove /dev/sdb2[K1
+  Labels on physical volume "/dev/sdb1" successfully wiped.
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# fdisk -l
+
+Disk /dev/sda: 21.5 GB, 21474836480 bytes, 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b33a5
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200    41943039    19921920   8e  Linux LVM
+
+Disk /dev/sdb: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x2c5adc10
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048     2099199     1048576   8e  Linux LVM
+/dev/sdb2         2099200     4196351     1048576   8e  Linux LVM
+/dev/sdb3         4196352     6293503     1048576   8e  Linux LVM
+/dev/sdb4         6293504     8388607     1047552   8e  Linux LVM
+
+Disk /dev/mapper/centos-root: 18.2 GB, 18249416704 bytes, 35643392 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/centos-swap: 2147 MB, 2147483648 bytes, 4194304 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# fdisk /dev/sdb
+Welcome to fdisk (util-linux 2.23.2).
+
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): p
+
+Disk /dev/sdb: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x2c5adc10
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048     2099199     1048576   8e  Linux LVM
+/dev/sdb2         2099200     4196351     1048576   8e  Linux LVM
+/dev/sdb3         4196352     6293503     1048576   8e  Linux LVM
+/dev/sdb4         6293504     8388607     1047552   8e  Linux LVM
+
+Command (m for help): m d /d   
+Partition number (1-4, default 4): 4
+Partition 4 is deleted
+
+Command (m for help): d
+Partition number (1-3, default 3): 3
+Partition 3 is deleted
+
+Command (m for help): d
+Partition number (1,2, default 2): 2
+Partition 2 is deleted
+
+Command (m for help): d
+Selected partition 1
+Partition 1 is deleted
+
+Command (m for help): 1 p
+
+Disk /dev/sdb: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x2c5adc10
+
+   Device Boot      Start         End      Blocks   Id  System
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# fdisk -l
+
+Disk /dev/sda: 21.5 GB, 21474836480 bytes, 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b33a5
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200    41943039    19921920   8e  Linux LVM
+
+Disk /dev/sdb: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x2c5adc10
+
+   Device Boot      Start         End      Blocks   Id  System
+
+Disk /dev/mapper/centos-root: 18.2 GB, 18249416704 bytes, 35643392 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/centos-swap: 2147 MB, 2147483648 bytes, 4194304 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# partprobe /dev/sdb
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# partprobe /dev/sdb[10Pfdisk -l
+
+Disk /dev/sda: 21.5 GB, 21474836480 bytes, 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b33a5
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200    41943039    19921920   8e  Linux LVM
+
+Disk /dev/sdb: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x2c5adc10
+
+   Device Boot      Start         End      Blocks   Id  System
+
+Disk /dev/mapper/centos-root: 18.2 GB, 18249416704 bytes, 35643392 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/centos-swap: 2147 MB, 2147483648 bytes, 4194304 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# vim /etc/fstab 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;53r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[53;1H"/etc/fstab" 13L, 521C[>c[2;1H[34m#
+# /etc/fstab
+# Created by anaconda on Mon Jan 10 11:55:28 2022
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#[m
+/dev/mapper/centos-root /[23C[32mxfs[m     [32mdefaults[m[8C[31m0 0[m
+[36mUUID[m[33m=[m[31maf60194d-b6f7-4159-bb91-29150ec73995[m /boot[19C[32mxfs[m     [32mdefaults[m[8C[31m0 0[m
+/dev/mapper/centos-swap [33mswap[m[20C[32mswap[m    [32mdefaults[m[8C[31m0 0[m
+[34m#test[m
+/dev/vgmain/lvtest      /mnt/lvtest[13C[32mext4[m    [32mdefaults[m[8C[31m0 0[m
+[1m[34m~                                                                                                        [15;1H~                                                                                                        [16;1H~                                                                                                        [17;1H~                                                                                                        [18;1H~                                                                                                        [19;1H~                                                                                                        [20;1H~                                                                                                        [21;1H~                                                                                                        [22;1H~                                                                                                        [23;1H~                                                                                                        [24;1H~                                                                                                        [25;1H~                                                                                                        [26;1H~                                                                                                        [27;1H~                                                                                                        [28;1H~                                                                                                        [29;1H~                                                                                                        [30;1H~                                                                                                        [31;1H~                                                                                                        [32;1H~                                                                                                        [33;1H~                                                                                                        [34;1H~                                                                                                        [35;1H~                                                                                                        [36;1H~                                                                                                        [37;1H~                                                                                                        [38;1H~                                                                                                        [39;1H~                                                                                                        [40;1H~                                                                                                        [41;1H~                                                                                                        [42;1H~                                                                                                        [43;1H~                                                                                                        [44;1H~                                                                                                        [45;1H~                                                                                                        [46;1H~                                                                                                        [47;1H~                                                                                                        [48;1H~                                                                                                        [49;1H~                                                                                                        [50;1H~                                                                                                        [51;1H~                                                                                                        [52;1H~                                                                                                        [m[53;88H12,1[10CAll[12;1H[?12l[?25h[?25l[53;89H3[13;1H[?12l[?25h[?25l[53;1H[1m-- INSERT --[m[53;14H[K[53;88H13,1[10CAll[13;1H[?12l[?25h[?25l[34m#/dev/vgmain/lvtest     /mnt/lvtest             ext4    defaults        0 0[m[53;91H2[13;2H[?12l[?25h[53;1H[K[13;1H[?25l[53;88H13,1[10CAll[13;1H[?12l[?25h[?25l[53;88H[K[53;1H:[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l[53;1H[K[53;88H13,1[10CAll[13;1H[?12l[?25h[?25l[53;89H2[12;1H[?12l[?25h[?25l[1m[34m~                                                                                                        [13;1H~                                                                                                        [m[53;89H1[11;1H[?12l[?25h[?25l[53;88H[K[53;1H:[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l"/etc/fstab" 11L, 465C written
+[?1l>[?12l[?25h[?1049l]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# fdisk
+Usage:
+ fdisk [options] <disk>    change partition table
+ fdisk [options] -l <disk> list partition table(s)
+ fdisk -s <partition>      give partition size(s) in blocks
+
+Options:
+ -b <size>             sector size (512, 1024, 2048 or 4096)
+ -c[=<mode>]           compatible mode: 'dos' or 'nondos' (default)
+ -h                    print this help text
+ -u[=<unit>]           display units: 'cylinders' or 'sectors' (default)
+ -v                    print program version
+ -C <number>           specify the number of cylinders
+ -H <number>           specify the number of heads
+ -S <number>           specify the number of sectors per track
+
+]0;root@localhost:~[root@localhost ~]# pvcreate [K[K[K[K[K[K[K[K[Kfdisk /dev/sdsdb[K[K[Kb
+Welcome to fdisk (util-linux 2.23.2).
+
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): p
+
+Disk /dev/sdb: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x2c5adc10
+
+   Device Boot      Start         End      Blocks   Id  System
+
+Command (m for help): n
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): p
+Partition number (1-4, default 1): 
+First sector (2048-8388607, default 2048): 
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-8388607, default 8388607): 1G^[[D^[[D^[[D+
+Value out of range.
+Last sector, +sectors or +size{K,M,G} (2048-8388607, default 8388607): +1G
+Partition 1 of type Linux and of size 1 GiB is set
+
+Command (m for help): n
+Partition type:
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended
+Select (default p): p
+Partition number (2-4, default 2): 
+First sector (2099200-8388607, default 2099200): +1G
+Value out of range.
+First sector (2099200-8388607, default 2099200): 
+Using default value 2099200
+Last sector, +sectors or +size{K,M,G} (2099200-8388607, default 8388607): +1G
+Partition 2 of type Linux and of size 1 GiB is set
+
+Command (m for help): n
+Partition type:
+   p   primary (2 primary, 0 extended, 2 free)
+   e   extended
+Select (default p): p
+Partition number (3,4, default 3): 
+First sector (4196352-8388607, default 4196352): 
+Using default value 4196352
+Last sector, +sectors or +size{K,M,G} (4196352-8388607, default 8388607): +1G
+Partition 3 of type Linux and of size 1 GiB is set
+
+Command (m for help): n
+Partition type:
+   p   primary (3 primary, 0 extended, 1 free)
+   e   extended
+Select (default e): p
+Selected partition 4
+First sector (6293504-8388607, default 6293504): 
+Using default value 6293504
+Last sector, +sectors or +size{K,M,G} (6293504-8388607, default 8388607): 
+Using default value 8388607
+Partition 4 of type Linux and of size 1023 MiB is set
+
+Command (m for help): w p
+
+Disk /dev/sdb: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x2c5adc10
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048     2099199     1048576   83  Linux
+/dev/sdb2         2099200     4196351     1048576   83  Linux
+/dev/sdb3         4196352     6293503     1048576   83  Linux
+/dev/sdb4         6293504     8388607     1047552   83  Linux
+
+Command (m for help): t
+Partition number (1-4, default 4): 
+Hex code (type L to list all codes): 8e
+Changed type of partition 'Linux' to 'Linux LVM'
+
+Command (m for help): t
+Partition number (1-4, default 4): 3
+Hex code (type L to list all codes): 8e
+Changed type of partition 'Linux' to 'Linux LVM'
+
+Command (m for help): t
+Partition number (1-4, default 4): 2
+Hex code (type L to list all codes): 8e
+Changed type of partition 'Linux' to 'Linux LVM'
+
+Command (m for help): t
+Partition number (1-4, default 4): 1
+Hex code (type L to list all codes): 8e
+Changed type of partition 'Linux' to 'Linux LVM'
+
+Command (m for help): p
+
+Disk /dev/sdb: 4294 MB, 4294967296 bytes, 8388608 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x2c5adc10
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048     2099199     1048576   8e  Linux LVM
+/dev/sdb2         2099200     4196351     1048576   8e  Linux LVM
+/dev/sdb3         4196352     6293503     1048576   8e  Linux LVM
+/dev/sdb4         6293504     8388607     1047552   8e  Linux LVM
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# pvcreate /dev/sda2 s[K[K[K[Kb1
+  Physical volume "/dev/sdb1" successfully created.
+]0;root@localhost:~[root@localhost ~]# pvcreate /dev/sdb1[K2
+  Physical volume "/dev/sdb2" successfully created.
+]0;root@localhost:~[root@localhost ~]# pvcreate /dev/sdb2[K3
+  Physical volume "/dev/sdb3" successfully created.
+]0;root@localhost:~[root@localhost ~]# pvcreate /dev/sdb3[K4
+  Physical volume "/dev/sdb4" successfully created.
+]0;root@localhost:~[root@localhost ~]# vgcreate v[Klvtest[K[K[K[K[K[Kvgtest
+  No command with matching syntax recognised.  Run 'vgcreate --help' for more information.
+  Correct command syntax is:
+  vgcreate VG_new PV ...
+
+]0;root@localhost:~[root@localhost ~]# vgcreate vgtest /dev/sda2 [K[K[Kb1 /dev/sdb2 /dev/sdb3 /dev/sdb4
+  Volume group "vgtest" successfully created
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# lvcreate -n lvtest -L 0.5G vgmain[1@1[C[C[C[C[C[1P[1@3[C[C[C[C[C[C[C[C[C[C[K[K[K[Ktest
+WARNING: ext4 signature detected on /dev/vgtest/lvtest1 at offset 1080. Wipe it? [y/n]: u
+  WARNING: Invalid input 'u'.
+WARNING: ext4 signature detected on /dev/vgtest/lvtest1 at offset 1080. Wipe it? [y/n]: y
+  Wiping ext4 signature on /dev/vgtest/lvtest1.
+  Logical volume "lvtest1" created.
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# mkfs.xfs --help
+mkfs.xfs: invalid option -- '-'
+unknown option -- 
+Usage: mkfs.xfs
+/* blocksize */		[-b log=n|size=num]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectlog=n|sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i log=n|perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectlog=n|sectsize=num,
+			    lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n log=n|size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s log=n|size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+]0;root@localhost:~[root@localhost ~]# [K[root@localhost ~]# [K[root@localhost ~]# mkfs.xfs --help[K
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# mkfs.xfs --help[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kpstree
+systemd─┬─ModemManager───2*[{ModemManager}]
+        ├─NetworkManager─┬─2*[dhclient]
+        │                └─2*[{NetworkManager}]
+        ├─2*[abrt-watch-log]
+        ├─abrtd
+        ├─accounts-daemon───2*[{accounts-daemon}]
+        ├─alsactl
+        ├─at-spi-bus-laun─┬─dbus-daemon───{dbus-daemon}
+        │                 └─3*[{at-spi-bus-laun}]
+        ├─at-spi2-registr───2*[{at-spi2-registr}]
+        ├─atd
+        ├─auditd─┬─audispd─┬─sedispatch
+        │        │         └─{audispd}
+        │        └─{auditd}
+        ├─avahi-daemon───avahi-daemon
+        ├─boltd───2*[{boltd}]
+        ├─colord───2*[{colord}]
+        ├─crond
+        ├─cupsd
+        ├─2*[dbus-daemon───{dbus-daemon}]
+        ├─dbus-launch
+        ├─dnsmasq───dnsmasq
+        ├─firewalld───{firewalld}
+        ├─gdm─┬─X───{X}
+        │     ├─gdm-session-wor─┬─gnome-session-b─┬─gnome-shell─┬─ibus-daemon─┬─ibus-dconf───3*[{ibus-dc+
+        │     │                 │                 │             │             ├─ibus-engine-sim───2*[{ib+
+        │     │                 │                 │             │             └─2*[{ibus-daemon}]
+        │     │                 │                 │             └─9*[{gnome-shell}]
+        │     │                 │                 ├─gsd-a11y-settin───3*[{gsd-a11y-settin}]
+        │     │                 │                 ├─gsd-clipboard───2*[{gsd-clipboard}]
+        │     │                 │                 ├─gsd-color───3*[{gsd-color}]
+        │     │                 │                 ├─gsd-datetime───2*[{gsd-datetime}]
+        │     │                 │                 ├─gsd-housekeepin───2*[{gsd-housekeepin}]
+        │     │                 │                 ├─gsd-keyboard───3*[{gsd-keyboard}]
+        │     │                 │                 ├─gsd-media-keys───3*[{gsd-media-keys}]
+        │     │                 │                 ├─gsd-mouse───2*[{gsd-mouse}]
+        │     │                 │                 ├─gsd-power───3*[{gsd-power}]
+        │     │                 │                 ├─gsd-print-notif───2*[{gsd-print-notif}]
+        │     │                 │                 ├─gsd-rfkill───2*[{gsd-rfkill}]
+        │     │                 │                 ├─gsd-screensaver───2*[{gsd-screensaver}]
+        │     │                 │                 ├─gsd-sharing───3*[{gsd-sharing}]
+        │     │                 │                 ├─gsd-smartcard───4*[{gsd-smartcard}]
+        │     │                 │                 ├─gsd-sound───3*[{gsd-sound}]
+        │     │                 │                 ├─gsd-wacom───2*[{gsd-wacom}]
+        │     │                 │                 ├─gsd-xsettings───3*[{gsd-xsettings}]
+        │     │                 │                 └─3*[{gnome-session-b}]
+        │     │                 └─2*[{gdm-session-wor}]
+        │     └─3*[{gdm}]
+        ├─gssproxy───5*[{gssproxy}]
+        ├─ibus-portal───2*[{ibus-portal}]
+        ├─ibus-x11───2*[{ibus-x11}]
+        ├─ksmtuned───sleep
+        ├─libvirtd───16*[{libvirtd}]
+        ├─lsmd
+        ├─lvmetad
+        ├─master─┬─pickup
+        │        └─qmgr
+        ├─packagekitd───2*[{packagekitd}]
+        ├─polkitd───6*[{polkitd}]
+        ├─pulseaudio───2*[{pulseaudio}]
+        ├─rngd
+        ├─rpcbind
+        ├─rsyslogd───2*[{rsyslogd}]
+        ├─rtkit-daemon───2*[{rtkit-daemon}]
+        ├─smartd
+        ├─sshd─┬─sshd───bash───script───script───bash───pstree
+        │      └─sshd───sftp-server
+        ├─systemd-journal
+        ├─systemd-logind
+        ├─systemd-udevd
+        ├─tuned───4*[{tuned}]
+        ├─udisksd───4*[{udisksd}]
+        ├─upowerd───2*[{upowerd}]
+        ├─wpa_supplicant
+        └─xdg-permission-───2*[{xdg-permission-}]
+]0;root@localhost:~[root@localhost ~]# [K[root@localhost ~]# [K[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# 
+]0;root@localhost:~[root@localhost ~]# exit
+
+Script done on Thu 20 Jan 2022 09:45:07 PM KST
