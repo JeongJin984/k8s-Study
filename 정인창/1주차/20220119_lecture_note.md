@@ -55,16 +55,6 @@ ls -l /dev/sd*
 
 * b는 Block Device(블록 단위로 입출력하는 장치)  
 
->brw-rw----@  8,0 root 19 Jan 23:05 /dev/sda
-brw-rw----@  8,1 root 19 Jan 23:05 /dev/sda1
-brw-rw----@  8,2 root 19 Jan 23:05 /dev/sda2                                                            
-brw-rw----@ 8,16 root 19 Jan 23:05 /dev/sdb
-brw-rw----@ 8,32 root 19 Jan 23:05 /dev/sdc
-brw-rw----@ 8,48 root 19 Jan 23:05 /dev/sdd
-brw-rw----@ 8,64 root 19 Jan 23:05 /dev/sde
-brw-rw----@ 8,80 root 19 Jan 23:05 /dev/sdf
-
-
 ---
 
 # 14:00 ~ 15:00
@@ -77,15 +67,17 @@ brw-rw----@ 8,80 root 19 Jan 23:05 /dev/sdf
 fdisk -l /dev/sda
 ```
 
->Disk /dev/sda: 40.1 GiB, 43037753344 bytes, 84058112 sectors
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: dos
-Disk identifier: 0x30ffc7c9
-Device     Boot   Start      End  Sectors  Size Id Type
-/dev/sda1  *       2048  2099199  2097152    1G 83 Linux
-/dev/sda2       2099200 84058111 81958912 39.1G 8e Linux LVM
+```
+# Disk /dev/sda: 40.1 GiB, 43037753344 bytes, 84058112 sectors
+# Units: sectors of 1 * 512 = 512 bytes
+# Sector size (logical/physical): 512 bytes / 512 bytes
+# I/O size (minimum/optimal): 512 bytes / 512 bytes
+# Disklabel type: dos
+# Disk identifier: 0x30ffc7c9
+# Device     Boot   Start      End  Sectors  Size Id Type
+# /dev/sda1  *       2048  2099199  2097152    1G 83 Linux
+# /dev/sda2       2099200 84058111 81958912 39.1G 8e Linux LVM
+```
 
 ```bash
 # fdisk 프롬프트를 열어 특정 장치 파티셔닝 하기
@@ -135,33 +127,41 @@ Select (default p):
    e   extended (container for logical partitions)
 Select (default e):
 
->Using default response e.
-Selected partition 4
-First sector (31459328-41943039, default 31459328):
+```
+# Using default response e.
+# Selected partition 4
+# First sector (31459328-41943039, default 31459328):
+```
 
 * 낭비하는 공간을 줄이기 위해 파티션들의 공간은 연속적으로 지정하거나 First sector를 디폴트로, 마지막 파티션의 Last sector는 디폴트로 하는 것이 좋음. 
 
-> Last sector, +sectors or +size{K,M,G,T,P} (31459328-41943039, default 41943039):
-Created a new partition 4 of type 'Extended' and of size 5 GiB.
+```
+# Last sector, +sectors or +size{K,M,G,T,P} (31459328-41943039, default 41943039):
+# Created a new partition 4 of type 'Extended' and of size 5 GiB.
+```
 
 * p 옵션으로 만들어진 파티션 확인하기
 
 7. Command (m for help): p
 
->Device     Boot    Start      End  Sectors Size Id Type
-/dev/sdb1           2048 10487807 10485760   5G 83 Linux
-/dev/sdb2       10487808 20973567 10485760   5G 83 Linux
-/dev/sdb3       20973568 31459327 10485760   5G 83 Linux
-/dev/sdb4       31459328 41943039 10483712   5G  5 Extended
+```
+# Device     Boot    Start      End  Sectors Size Id Type
+# /dev/sdb1           2048 10487807 10485760   5G 83 Linux
+# /dev/sdb2       10487808 20973567 10485760   5G 83 Linux
+# /dev/sdb3       20973568 31459327 10485760   5G 83 Linux
+# /dev/sdb4       31459328 41943039 10483712   5G  5 Extended
+```
 
 * 위 단계 까지의 상태는 디스크에 반영도 상태가 아니라 아직 메모리에서만 작업한 상태이다.
 * w 명령으로 실제 파티션을 반영하고 종료
 
 8. Command (m for help): w
 
->The partition table has been altered.
-Calling ioctl() to re-read partition table.
-Syncing disks.
+```
+# The partition table has been altered.
+# Calling ioctl() to re-read partition table.
+# Syncing disks.
+```
 
 ---
 
@@ -173,10 +173,12 @@ Syncing disks.
 fdisk -l /dev/sdb
 ```
 
->/dev/sdb1           2048 10487807 10485760   5G 83 Linux
-/dev/sdb2       10487808 20973567 10485760   5G 83 Linux
-/dev/sdb3       20973568 31459327 10485760   5G 83 Linux
-/dev/sdb4       31459328 41943039 10483712   5G  5 Extended
+```
+# /dev/sdb1           2048 10487807 10485760   5G 83 Linux
+# /dev/sdb2       10487808 20973567 10485760   5G 83 Linux
+# /dev/sdb3       20973568 31459327 10485760   5G 83 Linux
+# /dev/sdb4       31459328 41943039 10483712   5G  5 Extended
+```
 
 ```bash
 # 확인 방법 2. 만들어진 장치파일 확인
@@ -189,10 +191,12 @@ ls -l /dev/sdb*
 
 ```
 
->brw-rw----@ 8,17 root 20 Jan 00:12 /dev/sdb1
-brw-rw----@ 8,18 root 20 Jan 00:12 /dev/sdb2
-brw-rw----@ 8,19 root 20 Jan 00:12 /dev/sdb3
-brw-rw----@ 8,20 root 20 Jan 00:12 /dev/sdb4
+```
+# brw-rw----@ 8,17 root 20 Jan 00:12 /dev/sdb1
+# brw-rw----@ 8,18 root 20 Jan 00:12 /dev/sdb2
+# brw-rw----@ 8,19 root 20 Jan 00:12 /dev/sdb3
+# brw-rw----@ 8,20 root 20 Jan 00:12 /dev/sdb4
+```
 
 ---
 
@@ -204,24 +208,28 @@ brw-rw----@ 8,20 root 20 Jan 00:12 /dev/sdb4
 * Primary 파티션이 모두 생성된 상태에서는 logical 파티션을 extended 파티션에자동으로 추가한다.
 * extended 파티션은 데이터를 저장 할수 없고, logical 파티션만 생성할 수 있다.
 
->All primary partitions are in use.
-Adding logical partition 5
-First sector (31461376-41943039, default 31461376):
-Last sector, +sectors or +size{K,M,G,T,P} (31461376-41943039, default 41943039): +1G
+```
+# All primary partitions are in use.
+# Adding logical partition 5
+# First sector (31461376-41943039, default 31461376):
+# Last sector, +sectors or +size{K,M,G,T,P} (31461376-41943039, default 41943039): +1G
+```
 
 .
 .
 .
 
->Device     Boot    Start      End  Sectors Size Id Type
-/dev/sdb1           2048 10487807 10485760   5G 83 Linux
-/dev/sdb2       10487808 20973567 10485760   5G 83 Linux
-/dev/sdb3       20973568 31459327 10485760   5G 83 Linux
-/dev/sdb4       31459328 41943039 10483712   5G  5 Extended
-/dev/sdb5       31461376 33558527  2097152   1G 83 Linux
-/dev/sdb6       33560576 35657727  2097152   1G 83 Linux
-/dev/sdb7       35659776 37756927  2097152   1G 83 Linux
-/dev/sdb8       37758976 41943039  4184064   2G 83 Linux
+```
+# Device     Boot    Start      End  Sectors Size Id Type
+# /dev/sdb1           2048 10487807 10485760   5G 83 Linux
+# /dev/sdb2       10487808 20973567 10485760   5G 83 Linux
+# /dev/sdb3       20973568 31459327 10485760   5G 83 Linux
+# /dev/sdb4       31459328 41943039 10483712   5G  5 Extended
+# /dev/sdb5       31461376 33558527  2097152   1G 83 Linux
+# /dev/sdb6       33560576 35657727  2097152   1G 83 Linux
+# /dev/sdb7       35659776 37756927  2097152   1G 83 Linux
+# /dev/sdb8       37758976 41943039  4184064   2G 83 Linux
+```
 
 * logical 파티션에는 운영체제를 설치하거나 부팅용으로 사용할 수 없다.
 * 부팅 한 이후에 데이터를 저장하고 사용하는 용도로 사용 할 수 있다.
@@ -238,34 +246,36 @@ fdisk /dev/sdb
 
 p
 
-
->Device     Boot    Start      End  Sectors Size Id Type
-/dev/sdb1           2048 10487807 10485760   5G 83 Linux
-/dev/sdb2       10487808 20973567 10485760   5G 83 Linux
-/dev/sdb3       20973568 31459327 10485760   5G 83 Linux
-/dev/sdb4       31459328 41943039 10483712   5G  5 Extended
-/dev/sdb5       31461376 33558527  2097152   1G 83 Linux
-/dev/sdb6       33560576 35657727  2097152   1G 83 Linux
-/dev/sdb7       35659776 37756927  2097152   1G 83 Linux
-/dev/sdb8       37758976 41943039  4184064   2G 83 Linux
+```
+# Device     Boot    Start      End  Sectors Size Id Type
+# /dev/sdb1           2048 10487807 10485760   5G 83 Linux
+# /dev/sdb2       10487808 20973567 10485760   5G 83 Linux
+# /dev/sdb3       20973568 31459327 10485760   5G 83 Linux
+# /dev/sdb4       31459328 41943039 10483712   5G  5 Extended
+# /dev/sdb5       31461376 33558527  2097152   1G 83 Linux
+# /dev/sdb6       33560576 35657727  2097152   1G 83 Linux
+# /dev/sdb7       35659776 37756927  2097152   1G 83 Linux
+# /dev/sdb8       37758976 41943039  4184064   2G 83 Linux
+```
 
 d
 
-
->Partition number (1-8, default 8): 8
-
+```
+# Partition number (1-8, default 8): 8
+```
 .
 .
 .
 
->Command (m for help): p
-Disk /dev/sdb: 20 GiB, 21474836480 bytes, 41943040 sectors
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: dos
-Disk identifier: 0x2936bd2f
-
+```
+# Command (m for help): p
+# Disk /dev/sdb: 20 GiB, 21474836480 bytes, 41943040 sectors
+# Units: sectors of 1 * 512 = 512 bytes
+# Sector size (logical/physical): 512 bytes / 512 bytes
+# I/O size (minimum/optimal): 512 bytes / 512 bytes
+# Disklabel type: dos
+# Disk identifier: 0x2936bd2f
+```
 
 저장하고 종료
 
@@ -277,13 +287,17 @@ w
 ls -l /dev/sdb?
 ```
 
->"/dev/sdb?": No such file or directory (os error 2)
+```
+# "/dev/sdb?": No such file or directory (os error 2)
+```
 
 ```bash
 ls -l /dev/sdb*
 ```
 
->brw-rw----@ 8,16 root 23 Jan 02:42 /dev/sdb
+```
+# brw-rw----@ 8,16 root 23 Jan 02:42 /dev/sdb
+```
 
 ---
 
@@ -309,17 +323,21 @@ mkfs -t 파일시스템타입 장치
 fdisk -l /dev/sdb
 ```
 
->Device     Boot   Start      End  Sectors Size Id Type
+```
+# Device     Boot   Start      End  Sectors Size Id Type
 /dev/sdb1          2048  6293503  6291456   3G 83 Linux
 /dev/sdb2       6293504 20973567 14680064   7G 83 Linux
+```
 
 ```bash
 mkfs -t ext3 /dev/sdb1 
 ```
 
->mke2fs 1.45.6 (20-Mar-2020)
-Creating filesystem with 786432 4k blocks and 196608 inodes
-Filesystem UUID: 7ad48329-aa5c-4993-9daf-21e...
+```
+# mke2fs 1.45.6 (20-Mar-2020)
+# Creating filesystem with 786432 4k blocks and 196608 inodes
+# Filesystem UUID: 7ad48329-aa5c-4993-9daf-21e...
+```
 
 # mount - 파일 시스템으로 초기화한 파티션을 시스템에 연결
 
@@ -342,7 +360,9 @@ mkdir /mnt/data
 ls -l /mnt
 ```
 
->drwxr-xr-x@ - root 23 Jan 03:06 data
+```
+# drwxr-xr-x@ - root 23 Jan 03:06 data
+```
 
 2. 마운트
 
@@ -356,7 +376,9 @@ mount -t ext3 /dev/sdb1 /mnt/data
 mount | grep sdb1
 ```
 
->/dev/sdb1 on /mnt/data type ext3 (rw,relatime,seclabel)
+```
+# /dev/sdb1 on /mnt/data type ext3 (rw,relatime,seclabel)
+```
 
 ```bash
 ls -l /mnt/data
@@ -364,8 +386,9 @@ ls -l /mnt/data
 
 * `lost+found`는 파일 시스템에 오류가 발생 했을 때, 복구하기 위한 것
 
->drwx------ - root 23 Jan 02:57 lost+found
-
+```
+# drwx------ - root 23 Jan 02:57 lost+found
+```
 
 ---
 
@@ -406,15 +429,19 @@ mount | grep sdb1
 ls -l /etc/fstab
 ```
 
->.rw-r--r--@ 579 root 16 Jan 13:43 /etc/fstab
+```
+# .rw-r--r--@ 579 root 16 Jan 13:43 /etc/fstab
+```
 
 ```bash
 cat /etc/fstab
 ```
 
->/dev/mapper/cl-root     /                       xfs     defaults        0 0
-UUID=9f07c70d-6ad9-4a7e-b02a-1fd2a98a8bb6 /boot                   xfs     defaults        0 0
-/dev/mapper/cl-swap     none                    swap    defaults        0 0
+```
+# /dev/mapper/cl-root     /                       xfs     defaults        0 0
+# UUID=9f07c70d-6ad9-4a7e-b02a-1fd2a98a8bb6 /boot                   xfs     defaults        0 0
+# /dev/mapper/cl-swap     none                    swap    defaults        0 0
+```
 
 fastab에 내용추가
 
@@ -444,9 +471,10 @@ Swap:       2158588           0     2158588
 swapon -s
 ```
 
->Filename				Type		Size	Used	Priority
-/dev/dm-1                              	partition	2158588	0	-2
-
+```
+# Filename				Type		Size	Used	Priority
+# /dev/dm-1                              	partition	2158588	0	-2
+```
 ---
 
 ## 스왑메모리 생성 순서
@@ -457,35 +485,42 @@ swapon -s
 
 sdb 디스크에 512m 파티션을 생성
 
->Command (m for help): n
-Partition type
-   p   primary (2 primary, 0 extended, 2 free)
-   e   extended (container for logical partitions)
-Select (default p): p
-Partition number (3,4, default 3):
-First sector (20973568-41943039, default 20973568):
-Last sector, +sectors or +size{K,M,G,T,P} (20973568-41943039, default 41943039): +512M
+```
+# Command (m for help): n
+# Partition type
+#   p   primary (2 primary, 0 extended, 2 free)
+#   e   extended (container for logical partitions)
+# Select (default p): p
+# Partition number (3,4, default 3):
+# First sector (20973568-41943039, default 20973568):
+# Last sector, +sectors or +size{K,M,G,T,P} (20973568-41943039, default 41943039): +512M
+```
 
->Device     Boot    Start      End  Sectors  Size Id Type
-/dev/sdb1           2048  6293503  6291456    3G 83 Linux
-/dev/sdb2        6293504 20973567 14680064    7G 83 Linux
-/dev/sdb3       20973568 22022143  1048576  512M 83 Linux
+```
+# Device     Boot    Start      End  Sectors  Size Id Type
+# /dev/sdb1           2048  6293503  6291456    3G 83 Linux
+# /dev/sdb2        6293504 20973567 14680064    7G 83 Linux
+# /dev/sdb3       20973568 22022143  1048576  512M 83 Linux
+```
 
 3. 파티션의 종류를 바꿔준다.
 
 t - change partion's system id 
 82 - Linux swap
 
->Command (m for help): t
-Partition number (1-3, default 3):
-Hex code (type L to list all codes): 82
-Changed type of partition 'Linux' to 'Linux swap / Solaris'.
+```
+# Command (m for help): t
+# Partition number (1-3, default 3):
+# Hex code (type L to list all codes): 82
+# Changed type of partition 'Linux' to 'Linux swap / Solaris'.
+```
 
->Device     Boot    Start      End  Sectors  Size Id Type
-/dev/sdb1           2048  6293503  6291456    3G 83 Linux
-/dev/sdb2        6293504 20973567 14680064    7G 83 Linux
-/dev/sdb3       20973568 22022143  1048576  512M 82 Linux swap / Solaris
-
+```
+# Device     Boot    Start      End  Sectors  Size Id Type
+# /dev/sdb1           2048  6293503  6291456    3G 83 Linux
+# /dev/sdb2        6293504 20973567 14680064    7G 83 Linux
+# /dev/sdb3       20973568 22022143  1048576  512M 82 Linux swap / Solaris
+```
 w 저장후 종료
 
 4. 스왑영역의 파일 시스템으로 초기화
@@ -498,8 +533,10 @@ mkswap 장치파일
 mkswap /dev/sdb3
 ```
 
->Setting up swapspace version 1, size = 512 MiB (536866816 bytes)
-no label, UUID=50925e53-56ef-
+```
+# Setting up swapspace version 1, size = 512 MiB (536866816 bytes)
+# no label, UUID=50925e53-56ef-
+```
 
 만약 `No such file or directory`가 나올 경우에는 파티션을 만들었지만 가끔 파티셔닝이 시스템에 반영이 안되는 경우가 있기 때문이다.
 
@@ -525,8 +562,10 @@ swapon 장치파일
 swapon -s 
 ```
 
->Filename				Type		Size	Used	Priority
-/dev/dm-1                              	partition	2158588	0	-2
+```
+# Filename				Type		Size	Used	Priority
+# /dev/dm-1                              	partition	2158588	0	-2
+```
 
 마운트
 
@@ -538,9 +577,11 @@ swapon /dev/sdb3
 swapon -s
 ```
 
->Filename				Type		Size	Used	Priority
-/dev/dm-1                              	partition	2158588	0	-2
-/dev/sdb3                              	partition	524284	0	-3
+```
+# Filename				Type		Size	Used	Priority
+# /dev/dm-1                              	partition	2158588	0	-2
+# /dev/sdb3                              	partition	524284	0	-3
+```
 
 ---
 
@@ -554,8 +595,10 @@ swapoff /dev/sdb3
 swapon -s
 ```
 
->Filename				Type		Size	Used	Priority
-/dev/dm-1                              	partition	2158588	0	-2
+```
+# Filename				Type		Size	Used	Priority
+# /dev/dm-1                              	partition	2158588	0	-2
+```
 
 ---
 
