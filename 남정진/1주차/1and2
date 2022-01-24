@@ -1,0 +1,22 @@
+import re
+
+user_input = input()
+
+flag1 = False
+flag2 = False
+
+if "12" in user_input:
+    temp = re.sub("12", "", user_input, 1)
+    if "21" in temp:
+        flag1 = True
+
+if "21" in user_input:
+    temp = re.sub("21", "", user_input, 1)
+    if "12" in temp:
+        flag2= True
+
+if flag1 and flag2:
+    print("Yes")
+else:
+    print("No")
+
