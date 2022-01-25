@@ -1,0 +1,745 @@
+Script started on Tue 25 Jan 2022 10:32:36 AM KST
+]0;root@linux:~/worklog[?1034h[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# # 1. 현[K시스템의 현재 시간을 9시 정각으로 변경d[K
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# date
+Tue Jan 25 10:33:19 KST 2022
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# timedatectl set-time 9[K09:00:00
+Failed to set time: Automatic time synchronization is enabled
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# timedatectl status
+      Local time: Tue 2022-01-25 10:33:57 KST
+  Universal time: Tue 2022-01-25 01:33:57 UTC
+        RTC time: Tue 2022-01-25 01:33:53
+       Time zone: Asia/Seoul (KST, +0900)
+     NTP enabled: yes
+NTP synchronized: yes
+ RTC in local TZ: no
+      DST active: n/a
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# systemctl disable [K[K[K[K[K[K[K[Kstatus chrony
+chronyd.service      chrony-wait.service  
+[root@linux worklog]# systemctl status chrony
+chronyd.service      chrony-wait.service  
+[root@linux worklog]# systemctl status chronyd.service 
+[1;32m●[0m chronyd.service - NTP client/server
+   Loaded: loaded (/usr/lib/systemd/system/chronyd.service; enabled; vendor preset: enabled)
+   Active: [1;32mactive (running)[0m since Tue 2022-01-25 10:25:53 KST; 8min ago
+     Docs: man:chronyd(8)
+           man:chrony.conf(5)
+  Process: 772 ExecStartPost=/usr/libexec/chrony-helper update-daemon (code=exited, status=0/SUCCESS)
+  Process: 708 ExecStart=/usr/sbin/chronyd $OPTIONS (code=exited, status=0/SUCCESS)
+ Main PID: 732 (chronyd)
+    Tasks: 1
+   CGroup: /system.slice/chronyd.service
+           └─732 /usr/sbin/chronyd
+
+Jan 25 10:25:52 linux.example.com systemd[1]: Starting NTP client/server...
+Jan 25 10:25:52 linux.example.com chronyd[732]: chronyd version 3.4 starting (+CMDMON +NTP +REFCLOC...UG)
+Jan 25 10:25:52 linux.example.com chronyd[732]: Frequency -19.050 +/- 1.138 ppm read from /var/lib/...ift
+Jan 25 10:25:53 linux.example.com systemd[1]: Started NTP client/server.
+Jan 25 10:25:59 linux.example.com chronyd[732]: Selected source 216.239.35.4
+Jan 25 10:25:59 linux.example.com chronyd[732]: [1;39mSystem clock wrong by 3.474255 seconds, adjustment ...ted[0m
+Jan 25 10:26:03 linux.example.com chronyd[732]: [1;39mSystem clock was stepped by 3.474255 seconds[0m
+Hint: Some lines were ellipsized, use -l to show in full.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# systemctl status chronyd.service [1P[1P[1P[1P[1P[1P[1@d[1@i[1@s[1@a[3@ble
+Removed symlink /etc/systemd/system/multi-user.target.wants/chronyd.service.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# systemctl disable chronyd.service [1P[1P[1P[1P[1P[1P[1P[1@s[1@t[1@o[1@p
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# systemctl stop chronyd.service [3@disable[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pstatus[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Ptimedatectl status
+      Local time: Tue 2022-01-25 10:34:51 KST
+  Universal time: Tue 2022-01-25 01:34:51 UTC
+        RTC time: Tue 2022-01-25 01:34:47
+       Time zone: Asia/Seoul (KST, +0900)
+     NTP enabled: no
+NTP synchronized: yes
+ RTC in local TZ: no
+      DST active: n/a
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# timedatectl statussystemctl stop chronyd.service [3@disable[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pstatus[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Ptimedatectl statuset-time 09:00:00
+]0;root@linux:~/worklog[root@linux worklog]# 
+
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# date[K[K[K[Ktimedatectl set-time 09:00:00tatus[K
+      Local time: Tue 2022-01-25 09:00:10 KST
+  Universal time: Tue 2022-01-25 00:00:10 UTC
+        RTC time: Tue 2022-01-25 00:00:10
+       Time zone: Asia/Seoul (KST, +0900)
+     NTP enabled: no
+NTP synchronized: no
+ RTC in local TZ: no
+      DST active: n/a
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# # 2. ntp.test.goorm.com 이라는 주소를 ntp 서버로 등록하고 확인
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# chronyc sources
+506 Cannot talk to daemon
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# chronyc sources# 2. ntp.test.goorm.com 이라는 주소를 ntp 서버로 등록하고 확인[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctimedatectl status[Ket-time 09:00:00tatus[Ksystemctl stop chronyd.service [1P[1P[1@a[1@r[1@t
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# systemctl start chronyd.service [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pchronyc sources
+210 Number of sources = 1
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^? time4.google.com              1   6     1     2   -5698s[ -5698s] +/-   32ms
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# chronyc -a
+chrony version 3.4
+Copyright (C) 1997-2003, 2007, 2009-2018 Richard P. Curnow and others
+chrony comes with ABSOLUTELY NO WARRANTY.  This is free software, and
+you are welcome to redistribute it under certain conditions.  See the
+GNU General Public License version 2 for details.
+
+chronyc> add server ntp.test.goorm.com
+Invalid host/IP address
+chronyc> ^D
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# v[Kgrep server /etc/chrony.conf 
+# Use public [01;31m[Kserver[m[Ks from the pool.ntp.org project.
+#[01;31m[Kserver[m[K 0.centos.pool.ntp.org iburst
+#[01;31m[Kserver[m[K 1.centos.pool.ntp.org iburst
+#[01;31m[Kserver[m[K 2.centos.pool.ntp.org iburst
+#[01;31m[Kserver[m[K 3.centos.pool.ntp.org iburst
+[01;31m[Kserver[m[K time.google.com iburst
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# grep server /etc/chrony.conf [C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@v[1@i
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/etc/chrony.conf" 39L, 1142C[1;1H# Use public servers from the pool.ntp.org project.
+# Please consider joining the pool (http://www.pool.ntp.org/join.html).
+#server 0.centos.pool.ntp.org iburst
+#server 1.centos.pool.ntp.org iburst
+#server 2.centos.pool.ntp.org iburst
+#server 3.centos.pool.ntp.org iburst
+server time.google.com iburst
+
+# Record the rate at which the system clock gains/losses time.
+driftfile /var/lib/chrony/drift
+
+# Allow the system clock to be stepped in the first three updates
+# if its offset is larger than 1 second.
+makestep 1.0 3
+
+# Enable kernel synchronization of the real-time clock (RTC).
+rtcsync
+
+# Enable hardware timestamping on all interfaces that support it.
+#hwtimestamp *
+
+# Increase the minimum number of selectable sources required to adjust
+# the system clock.
+#minsources 2
+
+# Allow NTP client access from local network.
+#allow 192.168.0.0/16
+
+# Serve time even if not synchronized to a time source.
+#local stratum 10
+
+# Specify file containing keys for NTP authentication.
+#keyfile /etc/chrony.keys[1;1H[?12l[?25h
+
+
+
+
+
+[28C[?25l[35;1H[1m-- INSERT --[m[35;13H[K[7;30H[?12l[?25h[?25l[8;34r[8;1H[L[1;35r[8;1H[?12l[?25h[?25ls[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[?25lv[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25lntp.test.goorm.com[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25lb[?12l[?25h[?25lu[?12l[?25h[?25lr[?12l[?25h[?25ls[?12l[?25h[?25lt[?12l[?25h[35;1H[K[8;32H[?25l[?12l[?25h[?25l[35;1H:[?12l[?25hwq[?25l"/etc/chrony.conf" 40L, 1175C written
+[?1l>[?12l[?25h[?1049l]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# vi /etc/chrony.conf [9@grep server[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Pchronyc -asources
+210 Number of sources = 1
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^* time4.google.com              1   6    37    13    -23us[-3873us] +/-   32ms
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# chronyc sourcesvi /etc/chrony.conf [9@grep server[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Pchronyc -asourcessystemctl start chronyd.service [1@r[1@e
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# systemctl restart chronyd.service [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Pchronyc sourcesvi /etc/chrony.conf [5Pchronyc sources
+210 Number of sources = 1
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^? time4.google.com              1   6     3     2  +5131us[+5131us] +/-   35ms
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# chronyc sources
+210 Number of sources = 1
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^* time4.google.com              1   6    17    15   +724us[+1363us] +/-   33ms
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# chronyc sources
+210 Number of sources = 1
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^* time4.google.com              1   6    77    40    +54us[ +696us] +/-   32ms
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# # 3. 기본영역을 external로 변경
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --get-c[Kactive-zones 
+work
+  interfaces: enp0s3 enp0s8 enp0s9 enp0s10
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --get-active-zones [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kset-
+--set-default-zone=  --set-description=   --set-log-denied=    --set-short=
+[root@linux worklog]# firewall-cmd --set-default-zone=external 
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --set-default-zone=external [9Pget-active-zones[C
+external
+  interfaces: enp0s3 enp0s8 enp0s9 enp0s10
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# # 4. 1번 인터페이스를 work 영역에 배치하고 해당 영역에서 ssh 서비스만 허용하도록 설 정
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ifconfig 
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.11  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::efa4:8e4c:e2c2:dac  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:07:12:e7  txqueuelen 1000  (Ethernet)
+        RX packets 132  bytes 27286 (26.6 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 114  bytes 10988 (10.7 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.56.102  netmask 255.255.255.0  broadcast 192.168.56.255
+        inet6 fe80::d9c8:10b9:329:bdbd  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:33:32:0e  txqueuelen 1000  (Ethernet)
+        RX packets 2395  bytes 435217 (425.0 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 839  bytes 101147 (98.7 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s9: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.6  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::be4f:4fe9:992d:64ed  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:99:a8:a0  txqueuelen 1000  (Ethernet)
+        RX packets 49  bytes 14568 (14.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 35  bytes 6255 (6.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s10: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.7  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::8aba:bba:3acb:21b0  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:b7:18:ac  txqueuelen 1000  (Ethernet)
+        RX packets 49  bytes 14568 (14.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 34  bytes 6165 (6.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 12  bytes 1068 (1.0 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12  bytes 1068 (1.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:67:0a:d1  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ifconfig # 4. 1번 인터페이스를 work 영역에 배치하고 해당 영역에서 ssh 서비스만 허용하도록 설정정[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[51Pfirewall-cmd --get-active-zones 
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kset-
+--set-default-zone=  --set-description=   --set-log-denied=    --set-short=
+[root@linux worklog]# firewall-cmd --set-[K[K[K[Kche[Kange-interface=enp0s3 --zone=work 
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --change-interface=enp0s3 --zone=work [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cifconfig [K[42@firewall-cmd --change-interface=enp0s3 --zone=work[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kfirewall-cmd --change-interface=enp0s3 --zone=work [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Klist-all --zone=work 
+work (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s3
+  sources: 
+  services: dhcpv6-client http https ssh
+  ports: 
+  protocols: 
+  masquerade: no
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --list-all --zone=work [C[1P[1P[1P[1P[1P[1P[1P[1P[1@r[1@e[1@m[1@o[3@ve-[1@s[1@e[1@r[5@vice=[1@{[1@d[1@h[1@c[1@p[1@v[1@6[1@-[1@c[1@l[1@i[1@e[1@n[1@t[C[1@ [1@h[1@t[1@t[1@p[C[1@ [1@h[1@t[1@t[1@p[1@s[1@d[1@h[1@c[1@p[1@v[1@6[1@-[1@c[1@l[1@i[1@e[1@n[1@t[C[1@ h --zone=work  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct --zone=work  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct --zone=work [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp --zone=work [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C --zone=wo[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ch --zone=w[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct --zone=[1@w[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct --zone[1@=[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp --zon[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs --zo[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C} --z[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chttp httpsdhcpv6-client http https} --zo[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,http httpsdhcpv6-client http https} --z[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chttpsdhcpv6-client http https} --zo[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,httpsdhcpv6-client http https} --z[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chttp https} --zo[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,http https} --z[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chttps} --zo[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,https} --z[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+[91mWarning: INVALID_SERVICE: httpsdhcpv6-client[00m
+[91mWarning: NOT_ENABLED: 'http' not in 'work'[00m
+success
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --remove-service={dhcpv6-client,http,httpsdhcpv6-client,http,https} --zzone=work [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdhcpv6-client,http,https} --zo[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdhcpv6-client,http,https} --zon[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdhcpv6-client,http,https} --zone[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdhcpv6-client,http,https} --zone=[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdhcpv6-client,http,https} --zone=w[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdhcpv6-client,http,https} --zone=wo[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdhcpv6-client,http,https} --zone=wor[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdhcpv6-client,http,https} --zone=work[1P [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdhcpv6-client,http,https} --zone=work [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdhcpv6-client,http,https} --zone=work  [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P
+[91mWarning: NOT_ENABLED: 'dhcpv6-client' not in 'work'[00m
+[91mWarning: NOT_ENABLED: 'http' not in 'work'[00m
+[91mWarning: NOT_ENABLED: 'https' not in 'work'[00m
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --remove-service={dhcpv6-client,http,https} --zone=work dhcpv6-client,http,https} --zzone=work [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clist-all --zone=work [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15@change-interface=enp0s3[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cifconfig [K[42@firewall-cmd --change-interface=enp0s3 --zone=work[C[15Plist-all[C[C[C[C[C[C[C[C[C[C[C[C[C[15@change-interface=enp0s3[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cifconfig [K# 4. 1번 인터페이스를 work 영역에 배치하고 해당 영역에서 ssh 서비스만 허용하도록 설정정[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[51Pfirewall-cmd --get-active-zones 
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9@set-default-zone=external[C[9Pget-active-zones[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P# 3. 기본영역을 external로 변경[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewall-cmd --get-active-zones [9@set-default-zone=external[C[9Pget-active-zones[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C# 4. 1번 인터페이스를 work 영역에 배치하고 해당 영역에서 ssh 서비스만 허용하도록 설정정[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cifconfig [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[42@firewall-cmd --change-interface=enp0s3 --zone=work[C[15Plist-all[C[C[C[C[C[C[C[C[C[C[C[C[Cremove-service={dhcpv6-client,http,httpsdhcpv6-client,http,https} --zzone=work [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14P} --zone=work 
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kfirewall-cmd --remove-service={dhcpv6-client,http,https} --zone=work dhcpv6-client,http,https} --zzone=work [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clist-all --zone=work [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+work (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s3
+  sources: 
+  services: ssh
+  ports: 
+  protocols: 
+  masquerade: no
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# # 5. 기본영역에 8888/tcp 포트를 허용하도록 설정
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# # 5. 기본영역에 8888/tcp 포트를 허용하도록 설정[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pfirewall-cmd --list-all --zone=work [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kset-
+--set-default-zone=  --set-description=   --set-log-denied=    --set-short=
+[root@linux worklog]# firewall-cmd --set-[K[K[K[Kadd-port=8888/tcp
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --add-port=8888/tcp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C# 5. 기본영역에 8888/tcp 포트를 허용하도록 설정[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pfirewall-cmd --list-all --zone=work [K[K[K[K[K[K[K[K[K[K[K[K[K
+external (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s10 enp0s8 enp0s9
+  sources: 
+  services: ssh
+  ports: 8888/tcp
+  protocols: 
+  masquerade: yes
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# # 6. 모든 대상이 8888/tcp 포트로 접근하면 22/tcp 포트로 연결하도록 포트포워딩 설정
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --add-forward-port=Port[K[K[K[Kport=8888:proto=tcp:toport=22:[K
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --add-forward-port=port=8888:proto=tcp:toport=22[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Klist-all | grep "forward-ports"
+  [01;31m[Kforward-ports[m[K: port=8888:proto=tcp:toport=22:toaddr=
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 7[K# 7. 192.168.0.0/24 대역에서 80/tcp 포트로 접근하면 허용하도록 설정
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --add-rich-rule='rule famaily-[K=ipv4 destination address="192.168.0.0/24 " port port="80" protocol=t[K"tcp" accept'
+[91mError: INVALID_RULE: bad attribute 'famaily'[00m
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --add-rich-rule='rule famaily=ipv4 destination address="192.168.0.0/24"" port port="80" protocol="tcp" accept'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C=ipv4 destination address="192.168.0.0/24" [1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C=ipv4 destination address="192.168.0.0/24" p[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C=ipv4 destination address="192.168.0.0/24" po[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci=ipv4 destination address="192.168.0.0/24" p[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl=ipv4 destination address="192.168.0.0/24" [1@p[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cy=ipv4 destination address="192.168.0.0/24"[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+[91mError: INVALID_RULE: bad attribute 'famaily'[00m
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# man -=[Kk rich
+firewalld.richlanguage (5) - Rich Language Documentation
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# man firewalld.richlanguage
+[?1049h[?1h=FIREWALLD.RICHLANG(5)                   firewalld.richlanguage                   FIREWALLD.RICHLANG(5)[m
+[m
+[1mNAME[0m[m
+       firewalld.richlanguage - Rich Language Documentation[m
+[m
+[1mDESCRIPTION[0m[m
+       With the rich language more complex firewall rules can be created in an easy to understand way.[m
+       The language uses keywords with values and is an abstract representation of ip*tables rules.[m
+[m
+       The rich language extends the current zone elements (service, port, icmp-block, icmp-type,[m
+       masquerade, forward-port and source-port) with additional source and destination addresses,[m
+       logging, actions and limits for logs and actions.[m
+[m
+       This page describes the rich language used in the command line client and D-Bus interface. For[m
+       information about the rich language representation used in the zone configuration files, please[m
+       have a look at [1mfirewalld.zone[0m(5).[m
+[m
+       A rule is part of a zone. One zone can contain several rules. If some rules[m
+       interact/contradict, the first rule that matches "wins".[m
+[m
+       [1mGeneral[0m [1mrule[0m [1mstructure[0m[m
+[m
+           rule[m
+             [source][m
+             [destination][m
+             service|port|protocol|icmp-block|icmp-type|masquerade|forward-port|source-port[m
+             [log][m
+             [audit][m
+             [accept|reject|drop|mark][m
+[m
+       The complete rule is provided as a single line string. A destination is allowed here as long as[m
+       it does not conflict with the destination of a service.[m
+[m
+       [1mRule[0m [1mstructure[0m [1mfor[0m [1msource[0m [1mblack[0m [1mor[0m [1mwhite[0m [1mlisting[0m[m
+[7m Manual page firewalld.richlanguage(5) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page firewalld.richlanguage(5) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           rule[m
+[7m Manual page firewalld.richlanguage(5) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             source[m
+[7m Manual page firewalld.richlanguage(5) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             [log][m
+[7m Manual page firewalld.richlanguage(5) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             [audit][m
+[7m Manual page firewalld.richlanguage(5) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             accept|reject|drop|mark[m
+[7m Manual page firewalld.richlanguage(5) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page firewalld.richlanguage(5) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This is used to grant or limit access from a source to this machine or machines that are[m
+[7m Manual page firewalld.richlanguage(5) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       reachable by this machine. A destination is not allowed here.[m
+[7m Manual page firewalld.richlanguage(5) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page firewalld.richlanguage(5) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mImportant[0m [1minformation[0m [1mabout[0m [1melement[0m [1moptions:[0m Options for elements in a rule need to be added[m
+[7m Manual page firewalld.richlanguage(5) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       exactly after the element. If the option is placed somewhere else it might be used for another[m
+[7m Manual page firewalld.richlanguage(5) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       element as far as it matches the options of the other element or will result in a rule error.[m
+[7m Manual page firewalld.richlanguage(5) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page firewalld.richlanguage(5) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K   [1mRule[0m[m
+[7m Manual page firewalld.richlanguage(5) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           rule [family="ipv4|ipv6"][m
+[7m Manual page firewalld.richlanguage(5) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page firewalld.richlanguage(5) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       If the rule family is provided, it can be either "ipv4" or "ipv6", which limits the rule to[m
+[7m Manual page firewalld.richlanguage(5) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       IPv4 or IPv6. If the rule family is not provided, the rule will be added for IPv4 and IPv6. If[m
+[7m Manual page firewalld.richlanguage(5) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       source or destination addresses are used in a rule, then the rule family need to be provided.[m
+[7m Manual page firewalld.richlanguage(5) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This is also the case for port/packet forwarding.[m
+[7m Manual page firewalld.richlanguage(5) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page firewalld.richlanguage(5) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K   [1mSource[0m[m
+[7m Manual page firewalld.richlanguage(5) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           source [not] address="address[/mask]"|mac="mac-address"|ipset="ipset"[m
+[7m Manual page firewalld.richlanguage(5) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page firewalld.richlanguage(5) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       With the source address the origin of a connection attempt can be limited to the source[m
+[7m Manual page firewalld.richlanguage(5) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       address. An address is either a single IP address, or a network IP address, a MAC address or an[m
+[7m Manual page firewalld.richlanguage(5) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       IPSet. The address has to match the rule family (IPv4/IPv6). Subnet mask is expressed in either[m
+[7m Manual page firewalld.richlanguage(5) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       dot-decimal (/x.x.x.x) or prefix (/x) notations for IPv4, and in prefix notation (/x) for IPv6[m
+[7m Manual page firewalld.richlanguage(5) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       network addresses. It is possible to invert the sense of an address by adding [1mnot[0m before[m
+[7m Manual page firewalld.richlanguage(5) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1maddress[0m. All but the specified address will match then.[m
+[7m Manual page firewalld.richlanguage(5) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page firewalld.richlanguage(5) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K   [1mDestination[0m[m
+[7m Manual page firewalld.richlanguage(5) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K           destination [not] address="address[/mask]"[m
+[7m Manual page firewalld.richlanguage(5) line 38 (press h for help or q to quit)[27m[K[K[?1l>[?1049l]0;root@linux:~/worklog[root@linux worklog]# man firewalld.richlanguage-k rich[Kfirewall-cmd --add-rich-rule='rule famaily=ipv4 destination address="192.168.0.0/24"" port port="80" protocol="tcp" accept'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cily=ipv4 destination address="192.168.0.0/24" [1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --list-all
+external (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s10 enp0s8 enp0s9
+  sources: 
+  services: ssh
+  ports: 8888/tcp
+  protocols: 
+  masquerade: yes
+  forward-ports: port=8888:proto=tcp:toport=22:toaddr=
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	rule family="ipv4" destination address="192.168.0.0/24" port port="80" protocol="tcp" accept
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --list-alladd-rich-rule='rule family=ipv4 destination address="192.168.0.0/24"  port port="80" protocol="tcp" accept'[Alist-all[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# * [K[K# 8. 192.168.0.0/24 대역에서 2222/tcp 로 접근하면 192.168.0.10 시스템의 22/tcp 로  연연결하도록 포트포워딩 설정
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# # 8. 192.168.0.0/24 대역에서 2222/tcp 로 접근하면 192.168.0.10 시스템의 22/tcp 로  연연결하도록 포트포워딩 설정[Afirewall-cmd --list-all[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd-rich-rule='rule family=ipv4 destination address="192.168.0.0/24"  port port="80" protocol="tcp" accept'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" p[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" po[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" por[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" port[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" port [1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" port p[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" port po[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" port por[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" port port[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" port port=[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24" port port="[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cf destination address="192.168.0.0/24" port port=[1@"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co destination address="192.168.0.0/24" port port[1@=[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr destination address="192.168.0.0/24" port por[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cw destination address="192.168.0.0/24" port po[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca destination address="192.168.0.0/24" port p[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr destination address="192.168.0.0/24" port [1@p[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd destination address="192.168.0.0/24" port[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C- destination address="192.168.0.0/24" por[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp destination address="192.168.0.0/24" po[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co destination address="192.168.0.0/24" p[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr destination address="192.168.0.0/24" [1@p[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct destination address="192.168.0.0/24"[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.168.0.0/24[1@"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp destination address="192.168.0.0/2[1@4[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co destination address="192.168.0.0/[1@2[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr destination address="192.168.0.0[1@/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct destination address="192.168.0.[1@0[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C= destination address="192.168.0[1@.[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2 destination address="192.168.[1@0[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2 destination address="192.168[1@.[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2 destination address="192.16[1@8[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2 destination address="192.1[1@6[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination address="192.[1@1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp destination address="192[1@.[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr destination address="19[1@2[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co destination address="1[1@9[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct destination address="[1@1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co destination address=[1@"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc destination address[1@=[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co destination addres[1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl destination addre[C[1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C= destination addr[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct destination add[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc destination ad[1@d[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp destination a[C[1@d[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C destination [1@a[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct destination[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co destinatio[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C- destinati[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp destinat[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co destina[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr destin[1@a[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct desti[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C= dest[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2 des[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2 de[1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C d[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct [1@d[1@o[1@-[1@a[1@d[1@d[1@r[1@=[1@1[1@9[1@2[1@.[1@1[1@6[1@8[1@.[1@0[1@.[1@1[1@0[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[1P[C[1P[1P[1P[1P[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P accept'[1Paccept'[1Pccept'[C[1Pept'[1Pept'[1Ppt'[1Pt'[1P'[1P'
+[91mError: MISSING_FAMILY[00m
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --add-rich-rule='rule forward-port port=2222 protocol=tcp to-port=22 too-addr=192.168.0.10'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C forward-port port=2222 protocol=tcp to-port=22 to-addr=192.168.0.10'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cf forward-port port=2222 protocol=tcp to-port=22 to-addr=192.168.0.10'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca forward-port port=2222 protocol=tcp to-port=22 to-addr=192.168.0.10'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm forward-port port=2222 protocol=tcp to-port=22 to-addr=192.168.0.10'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci forward-port port=2222 protocol=tcp to-port=[C2 to-addr=192.168.0.10'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl forward-port port=2222 protocol=tcp to-port[1@=[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cy forward-port port=2222 protocol=tcp to-por[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C= forward-port port=2222 protocol=tcp to-po[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci forward-port port=2222 protocol=tcp to-p[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp forward-port port=2222 protocol=tcp to-[1@p[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cv forward-port port=2222 protocol=tcp to[1@-[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C4 forward-port port=2222 protocol=tcp t[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --add-rich-rule='rule family=ipv4 forward-port port=2222 protocol=tcp tto-port=22 to-addr=192.168.0.10'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Corward-port port=2222 protocol=tcp to-port=22 to[12P-addr=192.168.0.10'[A[C[C# 8. 192.168.0.0/24 대역에서 2222/tcp 로 접근하면 192.168.0.10 시스템의 22/tcp 로  연[5@결하도록 포트포워딩 설정[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Afirewall-cmd --list-all[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd-rich-rule='rule family=ipv4 destination address="192.168.0.0/24"  port port="80" protocol="tcp" accept'[Aman firewalld.richlanguage[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-k rich[Kfirewall-cmd --add-rich-rule='rule famaily=ipv4 destination address="192.168.0.0/24"" port port="80" protocol="tcp" accept'[A[16P# 7. 192.168.0.0/24 대역에서 80/tcp 포트로 접근하면 허용하도록 설정
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[21Pfirewall-cmd --list-all | grep "forward-ports"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C# 7. 192.168.0.0/24 대역에서 80/tcp 포트로 접근하면 허용하도록 설정[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewall-cmd --add-rich-rule='rule famaily=ipv4 destination address="192.168.0.0/24"" port port="80" protocol="tcp" accept'[Aman -k rich[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewall-cmd --add-rich-rule='rule famaily=ipv4 destination address="192.168.0.0/24"" port port="80" protocol="tcp" accept'[Aman -k rich[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewalld.richlanguage[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewall-cmd --add-rich-rule='rule family=ipv4 destination address="192.168.0.0/24"  port port="80" protocol="tcp" accept'[Alist-all[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+external (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s10 enp0s8 enp0s9
+  sources: 
+  services: ssh
+  ports: 8888/tcp
+  protocols: 
+  masquerade: yes
+  forward-ports: port=8888:proto=tcp:toport=22:toaddr=
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	rule family="ipv4" destination address="192.168.0.0/24" port port="80" protocol="tcp" accept
+	rule family="ipv4" forward-port port="2222" protocol="tcp" to-port="22" to-addr="192.168.0.10"
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]#  [K
+]0;root@linux:~/worklog[root@linux worklog]# # 7. qj[K[K번 문제 수정...
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# d[Kfirewall-cmd --remove-rich-rule='rule family="ipv4" destination address="192.168.0. 0/24" port port="80" protocol="tcp" accept'
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --remove-rich-rule='rule family="ipv4" destination address="192.168.0.00/24" port port="80" protocol="tcp" accept'[A# 7. 번 문제 수정...[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewall-cmd --list-alladd-rich-rule='rule family=ipv4 forward-port port=2222 protocol=tcp tto-port=22 to-addr=192.168.0.10'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Corward-port port=2222 protocol=tcp to-port=22 to[12P-addr=192.168.0.10'[A[C[C# 8. 192.168.0.0/24 대역에서 2222/tcp 로 접근하면 192.168.0.10 시스템의 22/tcp 로  연[5@결하도록 포트포워딩 설정[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Afirewall-cmd --list-all[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd-rich-rule='rule family=ipv4 destination address="192.168.0.0/24"  port port="80" protocol="tcp" accept'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" p[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" po[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" por[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" port[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" port [1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" port p[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" port po[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" port por[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" port port[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" port port=[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C address="192.168.0.0/24" port port="[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs address="192.168.0.0/24" port port=[1@"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co address="192.168.0.0/24" port port[1@=[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu address="192.168.0.0/24" port por[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr address="192.168.0.0/24" port po[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc address="192.168.0.0/24" port p[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce address="192.168.0.0/24" port [1@p[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --add-rich-rule='rule family=ipv4 source address="192.168.0.0/24" port  port="80" protocol="tcp" accept'[A[C[C[C[Cremove-rich-rule='rule family="ipv4" destination address="192.168.0.0[10@/24" port [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A# 7. 번 문제 수정...[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewall-cmd --list-all
+external (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s10 enp0s8 enp0s9
+  sources: 
+  services: ssh
+  ports: 8888/tcp
+  protocols: 
+  masquerade: yes
+  forward-ports: port=8888:proto=tcp:toport=22:toaddr=
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	rule family="ipv4" forward-port port="2222" protocol="tcp" to-port="22" to-addr="192.168.0.10"
+	rule family="ipv4" source address="192.168.0.0/24" port port="80" protocol="tcp" accept
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# [K[root@linux worklog]# [K[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# systemctl rstart firea[Kw[K[K[K[K[K[K[K[K[K[K[K[K[K[Kl restart firewalld.service 
+Display all 389 possibilities? (y or n)
+[root@linux worklog]# systemctl restart firewalld.service 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# systemctl restart firewalld.service [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pfirewall-cmd --list-all
+external (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s10 enp0s3 enp0s8 enp0s9
+  sources: 
+  services: ssh
+  ports: 
+  protocols: 
+  masquerade: yes
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd reload
+usage: see firewall-cmd man page
+firewall-cmd: error: unrecognized arguments: reload
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd reload--list-all[4Preload[K[K[K[K[K[K--re
+--reload                              --remove-lockdown-whitelist-user=
+--remove-forward-port=                --remove-masquerade
+--remove-icmp-block=                  --remove-port=
+--remove-icmp-block-inversion         --remove-protocol=
+--remove-interface=                   --remove-rich-rule=
+--remove-lockdown-whitelist-command=  --remove-service=
+--remove-lockdown-whitelist-context=  --remove-source=
+--remove-lockdown-whitelist-uid=      --remove-source-port=
+[root@linux worklog]# firewall-cmd --reload
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --reload[2Preload--list-all
+external (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s10 enp0s3 enp0s8 enp0s9
+  sources: 
+  services: ssh
+  ports: 
+  protocols: 
+  masquerade: yes
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# exit
+
+Script done on Tue 25 Jan 2022 12:03:50 PM KST

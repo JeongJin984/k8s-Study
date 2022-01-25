@@ -1,0 +1,1225 @@
+Script started on Tue 25 Jan 2022 12:04:02 PM KST
+]0;root@linux:~/worklog[?1034h[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmb[Kcli device status
+DEVICE      TYPE      STATE      CONNECTION         
+[32menp0s3[0m      [32methernet[0m  [32mconnected[0m  [32mtest1[0m              
+[32menp0s10[0m     [32methernet[0m  [32mconnected[0m  [32mWired connection 2[0m 
+[32menp0s8[0m      [32methernet[0m  [32mconnected[0m  [32menp0s8[0m             
+[32menp0s9[0m      [32methernet[0m  [32mconnected[0m  [32mWired connection 1[0m 
+[32mvirbr0[0m      [32mbridge[0m    [32mconnected[0m  [32mvirbr0[0m             
+[2mlo[0m          [2mloopback[0m  [2munmanaged[0m  [2m--[0m                 
+[2mvirbr0-nic[0m  [2mtun[0m       [2munmanaged[0m  [2m--[0m                 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con down enp0s9
+Error: 'enp0s9' is not an active connection.
+Error: no active connection provided.
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con down enp0s9[C enp0s9d enp0s9e enp0s9v enp0s9
+Error: 'dev' is not an active connection.
+Error: 'enp0s9' is not an active connection.
+Error: no active connection provided.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con down dev enp0s9[1Penp0s9[1Penp0s9[1Pnp0s9[1Penp0s9
+Error: 'enp0s9' is not an active connection.
+Error: no active connection provided.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con down enp0s9dev enp0s9[4Penp0s9[2Pdevice status
+DEVICE      TYPE      STATE      CONNECTION         
+[32menp0s3[0m      [32methernet[0m  [32mconnected[0m  [32mtest1[0m              
+[32menp0s10[0m     [32methernet[0m  [32mconnected[0m  [32mWired connection 2[0m 
+[32menp0s8[0m      [32methernet[0m  [32mconnected[0m  [32menp0s8[0m             
+[32menp0s9[0m      [32methernet[0m  [32mconnected[0m  [32mWired connection 1[0m 
+[32mvirbr0[0m      [32mbridge[0m    [32mconnected[0m  [32mvirbr0[0m             
+[2mlo[0m          [2mloopback[0m  [2munmanaged[0m  [2m--[0m                 
+[2mvirbr0-nic[0m  [2mtun[0m       [2munmanaged[0m  [2m--[0m                 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli device statuscon down enp0s9[C[C
+Error: 'enp0s9' is not an active connection.
+Error: no active connection provided.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli connection add [1@#[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccon-name team0 ifname team0 tpye [K[K[K[K[K
+autoconnect                      ipv4.addresses                   ipv6.dns
+con-name                         ipv4.dad-timeout                 ipv6.dns-options
+connection.auth-retries          ipv4.dhcp-client-id              ipv6.dns-priority
+connection.autoconnect           ipv4.dhcp-fqdn                   ipv6.dns-search
+connection.autoconnect-priority  ipv4.dhcp-hostname               ipv6.gateway
+connection.autoconnect-retries   ipv4.dhcp-send-hostname          ipv6.ignore-auto-dns
+connection.autoconnect-slaves    ipv4.dhcp-timeout                ipv6.ignore-auto-routes
+connection.gateway-ping-timeout  ipv4.dns                         ipv6.ip6-privacy
+connection.id                    ipv4.dns-options                 ipv6.may-fail
+connection.interface-name        ipv4.dns-priority                ipv6.method
+connection.lldp                  ipv4.dns-search                  ipv6.never-default
+connection.llmnr                 ipv4.gateway                     ipv6.route-metric
+connection.master                ipv4.ignore-auto-dns             ipv6.routes
+connection.mdns                  ipv4.ignore-auto-routes          ipv6.route-table
+connection.metered               ipv4.may-fail                    ipv6.routing-rules
+connection.multi-connect         ipv4.method                      ipv6.token
+connection.permissions           ipv4.never-default               master
+connection.read-only             ipv4.route-metric                match.interface-name
+connection.secondaries           ipv4.routes                      proxy.browser-only
+connection.slave-type            ipv4.route-table                 proxy.method
+connection.stable-id             ipv4.routing-rules               proxy.pac-script
+connection.timestamp             ipv6.addresses                   proxy.pac-url
+connection.type                  ipv6.addr-gen-mode               slave-type
+connection.uuid                  ipv6.dhcp-duid                   tc.qdiscs
+connection.zone                  ipv6.dhcp-hostname               tc.tfilters
+ifname                           ipv6.dhcp-send-hostname          type
+[root@linux worklog]# nmcli connection add con-name team0 ifname team0 type 
+6lowpan           bond-slave        gsm               ovs-interface     vpn
+802-11-olpc-mesh  bridge            infiniband        ovs-port          vxlan
+802-11-wireless   bridge-slave      ip-tunnel         pppoe             wifi
+802-3-ethernet    cdma              macsec            team              wifi-p2p
+adsl              dummy             macvlan           team-slave        wimax
+bluetooth         ethernet          olpc-mesh         tun               wireguard
+bond              generic           ovs-bridge        vlan              wpan
+[root@linux worklog]# nmcli connection add con-name team0 ifname team0 type 
+6lowpan           bond-slave        gsm               ovs-interface     vpn
+802-11-olpc-mesh  bridge            infiniband        ovs-port          vxlan
+802-11-wireless   bridge-slave      ip-tunnel         pppoe             wifi
+802-3-ethernet    cdma              macsec            team              wifi-p2p
+adsl              dummy             macvlan           team-slave        wimax
+bluetooth         ethernet          olpc-mesh         tun               wireguard
+bond              generic           ovs-bridge        vlan              wpan
+[root@linux worklog]# nmcli connection add con-name team0 ifname team0 type [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@#
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# #nmcli connection add con-name team0 ifname team0 type 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# #nmcli connection add con-name team0 ifname team0 type [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Knmcli device status
+DEVICE      TYPE      STATE      CONNECTION         
+[32menp0s3[0m      [32methernet[0m  [32mconnected[0m  [32mtest1[0m              
+[32menp0s10[0m     [32methernet[0m  [32mconnected[0m  [32mWired connection 2[0m 
+[32menp0s8[0m      [32methernet[0m  [32mconnected[0m  [32menp0s8[0m             
+[32menp0s9[0m      [32methernet[0m  [32mconnected[0m  [32mWired connection 1[0m 
+[32mvirbr0[0m      [32mbridge[0m    [32mconnected[0m  [32mvirbr0[0m             
+[2mlo[0m          [2mloopback[0m  [2munmanaged[0m  [2m--[0m                 
+[2mvirbr0-nic[0m  [2mtun[0m       [2munmanaged[0m  [2m--[0m                 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli device status[K[K[K[K[K[K[K[K[K[K[K[K[Kcon delete enp0s10
+Error: unknown connection 'enp0s10'.
+Error: cannot delete unknown connection(s): 'enp0s10'.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con delete enp0s10[K[K[K[K[K[K[K[K[K[K[K[K[K[Kdown "Wired connection 1"
+Connection 'Wired connection 1' successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/3)
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con down "Wired connection 1"[1P"2"
+Connection 'Wired connection 2' successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/4)
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con down "Wired connection 2"1"[11Pelete enp0s10[5Pdevice status
+DEVICE      TYPE      STATE         CONNECTION 
+[32menp0s3[0m      [32methernet[0m  [32mconnected[0m     [32mtest1[0m      
+[32menp0s8[0m      [32methernet[0m  [32mconnected[0m     [32menp0s8[0m     
+[32mvirbr0[0m      [32mbridge[0m    [32mconnected[0m     [32mvirbr0[0m     
+[31menp0s10[0m     [31methernet[0m  [31mdisconnected[0m  [31m--[0m         
+[31menp0s9[0m      [31methernet[0m  [31mdisconnected[0m  [31m--[0m         
+[2mlo[0m          [2mloopback[0m  [2munmanaged[0m     [2m--[0m         
+[2mvirbr0-nic[0m  [2mtun[0m       [2munmanaged[0m     [2m--[0m         
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli connection add con-name team0 ifname team0 type config '{run[K[K[K"runner": {"name": " broadcast"}}'
+Error: bad connection type: 'config' not among [6lowpan, 802-11-olpc-mesh (olpc-mesh), 802-11-wireless (wifi), 802-3-ethernet (ethernet), adsl, bluetooth, bond, bridge, cdma, dummy, generic, gsm, infiniband, ip-tunnel, macsec, macvlan, ovs-bridge, ovs-interface, ovs-port, pppoe, team, tun, vlan, vpn, vxlan, wifi-p2p, wimax, wireguard, wpan, bond-slave, bridge-slave, team-slave]
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli connection add con-name team0 ifname team0 type config '{"runner": {"name": "bbroadcast"}}'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C config '{"runner": {"name": "broadcast"}}'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct config '{"runner": {"name": "broadcast"}}'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce config '{"runner": {"name": "broadcast"}}'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca config '{"runner": {"name": "broadcast"}}'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm config '{"runner": {"name[1@"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+Connection 'team0' (d4d5a445-b81b-49c4-a65f-054b2e4eecaf) successfully added.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli connection add con-name team0 ifname team0 type team config '{"runner": {"namee": "broadcast"}}'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cconfig '{"runner": {"name": "b[5Proadcast"}}'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdevice status[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccon down "Wired connection 2"1"[11Pelete enp0s10[5Pdevice statusconnection add con-name team0 ifname team0 type [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdevice status[K[K[K[K[K[K[K[K[K[K[K[K[K[Kconnection show
+[?1h=NAME                UUID                                  TYPE      DEVICE [m
+[33mteam0[0m               [33md4d5a445-b81b-49c4-a65f-054b2e4eecaf[0m  [33mteam[0m      [33mteam0[0m  [m
+[32mtest1[0m               [32m98acde17-9d63-4d6a-ae6f-1bfd894377af[0m  [32methernet[0m  [32menp0s3[0m [m
+[32menp0s8[0m              [32ma22d80e9-66ee-46b0-a81c-54c56081bcd3[0m  [32methernet[0m  [32menp0s8[0m [m
+[32mvirbr0[0m              [32m1c742491-d476-4f3e-a9b5-1997397ef263[0m  [32mbridge[0m    [32mvirbr0[0m [m
+enp0s3              80d9eebc-be13-4198-b0ef-277900718fa1  ethernet  --     [m
+Wired connection 1  a1baf258-a3c6-3d09-a6d5-8ff649e054c0  ethernet  --     [m
+Wired connection 2  1290168e-dccc-3580-9a85-c0fa31208d7d  ethernet  --     [m
+[K[?1l>]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli connection modify teasm[K[K[Kam0 ipv4.addresses 10.0.2.100/24 ipv4.gateway 10.0.2.1 ip v4.dns 8.8.8.8 ipv4.mothod manual
+Error: invalid property 'mothod': 'mothod' not among [method, dns, dns-search, dns-options, dns-priority, addresses, gateway, routes, route-metric, route-table, routing-rules, ignore-auto-routes, ignore-auto-dns, dhcp-client-id, dhcp-timeout, dhcp-send-hostname, dhcp-hostname, dhcp-fqdn, never-default, may-fail, dad-timeout].
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli connection modify team0 ipv4.addresses 10.0.2.100/24 ipv4.gateway 10.0.2.1 ipvv4.dns 8.8.8.8 ipv4.mothod manual[1P[1@e
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con up team0 
+Connection successfully activated (master waiting for slaves) (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/8)
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con show
+[?1h=NAME                UUID                                  TYPE      DEVICE [m
+[32mtest1[0m               [32m98acde17-9d63-4d6a-ae6f-1bfd894377af[0m  [32methernet[0m  [32menp0s3[0m [m
+[32menp0s8[0m              [32ma22d80e9-66ee-46b0-a81c-54c56081bcd3[0m  [32methernet[0m  [32menp0s8[0m [m
+[32mteam0[0m               [32md4d5a445-b81b-49c4-a65f-054b2e4eecaf[0m  [32mteam[0m      [32mteam0[0m  [m
+[32mvirbr0[0m              [32m1c742491-d476-4f3e-a9b5-1997397ef263[0m  [32mbridge[0m    [32mvirbr0[0m [m
+enp0s3              80d9eebc-be13-4198-b0ef-277900718fa1  ethernet  --     [m
+Wired connection 1  a1baf258-a3c6-3d09-a6d5-8ff649e054c0  ethernet  --     [m
+Wired connection 2  1290168e-dccc-3580-9a85-c0fa31208d7d  ethernet  --     [m
+[K[?1l>]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con delete team0 
+Connection 'team0' (d4d5a445-b81b-49c4-a65f-054b2e4eecaf) successfully deleted.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con delete team0 show[K
+[?1h=NAME                UUID                                  TYPE      DEVICE [m
+[32mtest1[0m               [32m98acde17-9d63-4d6a-ae6f-1bfd894377af[0m  [32methernet[0m  [32menp0s3[0m [m
+[32menp0s8[0m              [32ma22d80e9-66ee-46b0-a81c-54c56081bcd3[0m  [32methernet[0m  [32menp0s8[0m [m
+[32mvirbr0[0m              [32m1c742491-d476-4f3e-a9b5-1997397ef263[0m  [32mbridge[0m    [32mvirbr0[0m [m
+enp0s3              80d9eebc-be13-4198-b0ef-277900718fa1  ethernet  --     [m
+Wired connection 1  a1baf258-a3c6-3d09-a6d5-8ff649e054c0  ethernet  --     [m
+Wired connection 2  1290168e-dccc-3580-9a85-c0fa31208d7d  ethernet  --     [m
+[K[?1l>]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con add [K[K[K[K[K[K[K[K[K[K[K[K[K[Knmcli con showdelete team0 show[Kup team0 nection modify team0 ipv4.addresses 10.0.2.100/24 ipv4.gateway 10.0.2.1 ipvv4.dns 8.8.8.8 ipv4.method manualo[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[Cshow[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd con-name team0 ifname team0 type team config '{"runner": {"namee": "broadcast"}}'
+Connection 'team0' (8bb154c8-00fb-461a-9588-369922049e4d) successfully added.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli connection add con-name team0 ifname team0 type team config '{"runner": {"namee": "broadcast"}}'[A[C[C[C[C[C[C[C[C[C[C[C[C[C show[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1h=NAME                UUID                                  TYPE      DEVICE [m
+[33mteam0[0m               [33m8bb154c8-00fb-461a-9588-369922049e4d[0m  [33mteam[0m      [33mteam0[0m  [m
+[32mtest1[0m               [32m98acde17-9d63-4d6a-ae6f-1bfd894377af[0m  [32methernet[0m  [32menp0s3[0m [m
+[32menp0s8[0m              [32ma22d80e9-66ee-46b0-a81c-54c56081bcd3[0m  [32methernet[0m  [32menp0s8[0m [m
+[32mvirbr0[0m              [32m1c742491-d476-4f3e-a9b5-1997397ef263[0m  [32mbridge[0m    [32mvirbr0[0m [m
+enp0s3              80d9eebc-be13-4198-b0ef-277900718fa1  ethernet  --     [m
+Wired connection 1  a1baf258-a3c6-3d09-a6d5-8ff649e054c0  ethernet  --     [m
+Wired connection 2  1290168e-dccc-3580-9a85-c0fa31208d7d  ethernet  --     [m
+[K[?1l>]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con add con-name port1 ifname ifname enp0s8 type team-slave master team0
+Error: invalid <setting>.<property> 'enp0s8'.
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con add con-name port1 ifname ifname enp0s8 type team-slave master team0[1P[1P[1P[1P[1P[1P[1@e[1@n[1@p[1@0[1@s[1@8
+Error: invalid <setting>.<property> 'enp0s8'.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con add con-name port1 ifname ifname enp0s8 type team-slave master team0[1P[1P[1P[1P[1P[1@e[1@n[1@p[1@0[1@s[1@8[1P[1P[1P[1P[1P[1P[1@p[1@o[1@r[1@t[1@1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@3
+Error: invalid <setting>.<property> 'enp0s3'.
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con add con-name port1 ifname ifname enp0s3 type team-slave master team0[1P[1P[1P[1P[1P[1P[1@t[1@e[1@s[1@t[1@1
+Error: invalid <setting>.<property> 'test1'.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli device satu[K[K[Ktatus 
+DEVICE      TYPE      STATE                                  CONNECTION 
+[32menp0s3[0m      [32methernet[0m  [32mconnected[0m                              [32mtest1[0m      
+[32menp0s8[0m      [32methernet[0m  [32mconnected[0m                              [32menp0s8[0m     
+[32mvirbr0[0m      [32mbridge[0m    [32mconnected[0m                              [32mvirbr0[0m     
+[33mteam0[0m       [33mteam[0m      [33mconnecting (getting IP configuration)[0m  [33mteam0[0m      
+[31menp0s10[0m     [31methernet[0m  [31mdisconnected[0m                           [31m--[0m         
+[31menp0s9[0m      [31methernet[0m  [31mdisconnected[0m                           [31m--[0m         
+[2mlo[0m          [2mloopback[0m  [2munmanaged[0m                              [2m--[0m         
+[2mvirbr0-nic[0m  [2mtun[0m       [2munmanaged[0m                              [2m--[0m         
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli device status con add con-name port1 ifname ifname test1 type team-slave master team0[1@enp0s3[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C8[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cshow[Kadd con-name port1 ifname ifname enp0s8 type team-slave master team0
+Error: invalid <setting>.<property> 'enp0s8'.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con add con-name port1 ifname ifname enp0s8 type team-slave master team0[1P[1@9
+Error: invalid <setting>.<property> 'enp0s9'.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# teamdctl team0 config dump
+{
+    "device": "team0",
+    "runner": {
+        "name": "broadcast"
+    }
+}
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# nmcli connection modify team0 [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kteamdctl team0 config dump > team.config
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con mod team0 team.config < team.config 
+Error: value for 'team.config' is missing.
+]0;root@linux:~/worklog[root@linux worklog]# nmcli con mod team0 team.config < team.config [1P[1P[1P[1P[1P[1P[1P[1@.
+team.config                       team.runner                       team.runner-sys-prio
+team.link-watchers                team.runner-active                team.runner-tx-balancer
+team.mcast-rejoin-count           team.runner-agg-select-policy     team.runner-tx-balancer-interval
+team.mcast-rejoin-interval        team.runner-fast-rate             team.runner-tx-hash
+team.notify-peers-count           team.runner-hwaddr-policy         
+team.notify-peers-interval        team.runner-min-ports             
+[root@linux worklog]# nmcli con mod team0 team. < team.config [1@c[1@o[4@nfig
+Error: value for 'team.config' is missing.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# [K[root@linux worklog]# [K[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -lz
+ls: invalid option -- 'z'
+Try 'ls --help' for more information.
+]0;root@linux:~/worklog[root@linux worklog]# ls -lz[KZ
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220118_과제1_김정욱.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220120_worklog.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220121_worklog.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220124_firewall_homework.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220124_worklog.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220125_ntp_firewall_review.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220125_worklog.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 team.config
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# getenforce 
+Enforcing
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# setenforce 
+usage:  setenforce [ Enforcing | Permissive | 1 | 0 ]
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# setenforce 0
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# setenforce 0[Kg[C[C[C[C[C[C[C[C[C[C
+Permissive
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# getenforce setenforce 0[K1
+]0;root@linux:~/worklog[root@linux worklog]# setenforce 1[1Pgetenforce 
+Enforcing
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage 
+boolean     export      import      login       node        port        
+dontaudit   fcontext    interface   module      permissive  user        
+[root@linux worklog]# semanage fcontext --help
+usage: semanage fcontext [-h] [-n] [-N] [-S STORE] [ --add ( -t TYPE -f FTYPE -r RANGE -s SEUSER | -e EQUAL ) FILE_SPEC ) | --delete ( -t TYPE -f FTYPE | -e EQUAL ) FILE_SPEC ) | --deleteall  | --extract  | --list -C | --modify ( -t TYPE -f FTYPE -r RANGE -s SEUSER | -e EQUAL ) FILE_SPEC ) ]
+
+positional arguments:
+  file_spec             file_spec
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -C, --locallist       List fcontext local customizations
+  -n, --noheading       Do not print heading when listing fcontext object
+                        types
+  -N, --noreload        Do not reload policy after commit
+  -S STORE, --store STORE
+                        Select an alternate SELinux Policy Store to manage
+  -a, --add             Add a record of the fcontext object type
+  -d, --delete          Delete a record of the fcontext object type
+  -m, --modify          Modify a record of the fcontext object type
+  -l, --list            List records of the fcontext object type
+  -E, --extract         Extract customizable commands, for use within a
+                        transaction
+  -D, --deleteall       Remove all fcontext objects local customizations
+  -e EQUAL, --equal EQUAL
+                        Substitute target path with sourcepath when generating
+                        default label. This is used with fcontext. Requires
+                        source and target path arguments. The context labeling
+                        for the target subtree is made equivalent to that
+                        defined for the source.
+  -f {a,f,d,c,b,s,l,p}, --ftype {a,f,d,c,b,s,l,p}
+                        File Type. This is used with fcontext. Requires a file
+                        type as shown in the mode field by ls, e.g. use 'd' to
+                        match only directories or 'f' to match only regular
+                        files. The following file type options can be passed:
+                        f (regular file),d (directory),c (character device), b
+                        (block device),s (socket),l (symbolic link), p (named
+                        pipe). If you do not specify a file type, the file
+                        type will default to "all files".
+  -s SEUSER, --seuser SEUSER
+                        SELinux user name
+  -t TYPE, --type TYPE  SELinux Type for the object
+  -r RANGE, --range RANGE
+                        MLS/MCS Security Range (MLS/MCS Systems only) SELinux
+                        Range for SELinux login mapping defaults to the
+                        SELinux user record range.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+Script started on Tue 25 Jan 2022 02:27:10 PM KST
+]0;root@linux:~/worklog[?1034h[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -lZ
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220118_과제1_김정욱.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220120_worklog.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220121_worklog.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220124_firewall_homework.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220124_worklog.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220125_ntp_firewall_review.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 20220125_worklog.txt
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 team.config
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# cd
+]0;root@linux:~[root@linux ~]# ls -lZ
+-rw-------. root root system_u:object_r:admin_home_t:s0 anaconda-ks.cfg
+drwxr-xr-x. root root unconfined_u:object_r:admin_home_t:s0 [0m[01;34mDesktop[0m
+drwxr-xr-x. root root unconfined_u:object_r:admin_home_t:s0 [01;34mDocuments[0m
+drwxr-xr-x. root root unconfined_u:object_r:admin_home_t:s0 [01;34mDownloads[0m
+-rw-r--r--. root root system_u:object_r:admin_home_t:s0 initial-setup-ks.cfg
+drwxr-xr-x. root root unconfined_u:object_r:admin_home_t:s0 [01;34mMusic[0m
+drwxr-xr-x. root root unconfined_u:object_r:admin_home_t:s0 [01;34mPictures[0m
+drwxr-xr-x. root root unconfined_u:object_r:admin_home_t:s0 [01;34mPublic[0m
+drwxr-xr-x. root root unconfined_u:object_r:admin_home_t:s0 [01;34mTemplates[0m
+drwxr-xr-x. root root unconfined_u:object_r:admin_home_t:s0 [01;34mVideos[0m
+drwxr-xr-x. root root unconfined_u:object_r:admin_home_t:s0 [01;34mworklog[0m
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# semanage fcontext -a -t httpd_t fileA[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@#
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# # fileA에 ㅗㅅㅅ[K[K[Khttpd_t 라는 정책즈을 [K[K[K을 적용하겠다는 명령어 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# d[K
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# cat /etc/selinux/config 
+
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#     enforcing - SELinux security policy is enforced.
+#     permissive - SELinux prints warnings instead of enforcing.
+#     disabled - No SELinux policy is loaded.
+SELINUX=enforcing
+# SELINUXTYPE= can take one of three values:
+#     targeted - Targeted processes are protected,
+#     minimum - Modification of targeted policy. Only selected processes are protected. 
+#     mls - Multi Level Security protection.
+SELINUXTYPE=targeted 
+
+
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# 
+]0;root@linux:~[root@linux ~]# cd worklog/
+]0;root@linux:~/worklog[root@linux worklog]# ls
+20220118_과제1_김정욱.txt  20220124_firewall_homework.txt    20220125_worklog.txt
+20220120_worklog.txt       20220124_worklog.txt              team.config
+20220121_worklog.txt       20220125_ntp_firewall_review.txt
+]0;root@linux:~/worklog[root@linux worklog]# chcon [1@#
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# #chcon -t httpd_sys[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_content_t team.config
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -lZ ./team.config 
+-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 ./team.config
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# restorecon ./team.config 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# restorecon ./team.config [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pls -lZ[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 ./team.config
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+Script started on Tue 25 Jan 2022 02:42:47 PM KST
+]0;root@linux:~/worklog[?1034h[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage fcontext -l | grep http | wc -l
+199
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+Script started on Tue 25 Jan 2022 02:44:02 PM KST
+]0;root@linux:~/worklog[?1034h[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls /var/www/html/[K
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# echo "test http" > /var/www/html/index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# systemctl start httpd.service [K[K[K[K[K[K[K[K[K
+]0;root@linux:~/worklog[root@linux worklog]# systemctl start httpd[K
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# systemctl start httpd[C[C[1P httpd[1P httpd[1P httpd[1P httpd[1P httpds httpdt httpda httpdt httpdu httpds httpd
+[1;32m●[0m httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
+   Active: [1;32mactive (running)[0m since Tue 2022-01-25 15:04:09 KST; 7s ago
+     Docs: man:httpd(8)
+           man:apachectl(8)
+ Main PID: 11301 (httpd)
+   Status: "Processing requests..."
+    Tasks: 6
+   CGroup: /system.slice/httpd.service
+           ├─11301 /usr/sbin/httpd -DFOREGROUND
+           ├─11302 /usr/sbin/httpd -DFOREGROUND
+           ├─11303 /usr/sbin/httpd -DFOREGROUND
+           ├─11304 /usr/sbin/httpd -DFOREGROUND
+           ├─11305 /usr/sbin/httpd -DFOREGROUND
+           └─11306 /usr/sbin/httpd -DFOREGROUND
+
+Jan 25 15:04:09 linux.example.com systemd[1]: Starting The Apache HTTP Server...
+Jan 25 15:04:09 linux.example.com systemd[1]: Started The Apache HTTP Server.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# curl localhost
+test http
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# cat /var/www/html/index.html 
+test http
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -lZ /[K/var/www/html/index.html
+-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/html/index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# chcon -t h[K[K[K[K[K[K[K[K[K[Kifconfig
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.11  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::efa4:8e4c:e2c2:dac  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:07:12:e7  txqueuelen 1000  (Ethernet)
+        RX packets 262  bytes 41002 (40.0 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 242  bytes 21072 (20.5 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.56.102  netmask 255.255.255.0  broadcast 192.168.56.255
+        inet6 fe80::d9c8:10b9:329:bdbd  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:33:32:0e  txqueuelen 1000  (Ethernet)
+        RX packets 28122  bytes 6170122 (5.8 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7528  bytes 1014097 (990.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s9: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        ether 08:00:27:99:a8:a0  txqueuelen 1000  (Ethernet)
+        RX packets 89  bytes 27568 (26.9 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 78  bytes 14594 (14.2 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s10: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        ether 08:00:27:b7:18:ac  txqueuelen 1000  (Ethernet)
+        RX packets 90  bytes 27747 (27.0 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 76  bytes 14444 (14.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 22  bytes 2127 (2.0 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 22  bytes 2127 (2.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+team0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether ee:48:c9:51:7c:14  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:67:0a:d1  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --list-all
+external (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s3 enp0s8 team0
+  sources: 
+  services: ssh
+  ports: 
+  protocols: 
+  masquerade: yes
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --list-all[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[Kre
+--reload                              --remove-lockdown-whitelist-user=
+--remove-forward-port=                --remove-masquerade
+--remove-icmp-block=                  --remove-port=
+--remove-icmp-block-inversion         --remove-protocol=
+--remove-interface=                   --remove-rich-rule=
+--remove-lockdown-whitelist-command=  --remove-service=
+--remove-lockdown-whitelist-context=  --remove-source=
+--remove-lockdown-whitelist-uid=      --remove-source-port=
+[root@linux worklog]# firewall-cmd --re
+--reload                              --remove-lockdown-whitelist-user=
+--remove-forward-port=                --remove-masquerade
+--remove-icmp-block=                  --remove-port=
+--remove-icmp-block-inversion         --remove-protocol=
+--remove-interface=                   --remove-rich-rule=
+--remove-lockdown-whitelist-command=  --remove-service=
+--remove-lockdown-whitelist-context=  --remove-source=
+--remove-lockdown-whitelist-uid=      --remove-source-port=
+[root@linux worklog]# firewall-cmd --reload 
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --reload list-all
+external (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s3 enp0s8 team0
+  sources: 
+  services: ssh
+  ports: 
+  protocols: 
+  masquerade: yes
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --list-all[K[K[K[K[K[K[K[Kadd-service=http
+success
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --add-service=https
+success
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# firewall-cmd --add-service=https[K[8Plist-all[1Preload list-all[15Pifconfigls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pcat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -lZ /var/www/html/index.html
+-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/html/index.html
+]0;root@linux:~/worklog[root@linux worklog]# ls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewall-cmd --add-service=https[K[8Plist-all[1Preload list-all[15Pifconfigls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pcat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Purl localhostsystemctl status httpd[8Pcurl localhostat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pcat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Purl localhostsystemctl status httpd[1Prt[C[C[C[C[C[Cecho "test http" > /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[27Pls /var/www/htmlsemanage fcontext -l | grep http | wc -l./[K| grep http | wc -l./[K[2Pls -lZ ./team.config semanage fcontext -l ./| grep http | wc -l./[K[2Pls -lZ ./team.config [4@restorecon[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pls -lZ[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cchcon -t httpd_sys_content_t team.config[C[C[C[C[C[C[C[C[C[C[C[C[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.config[1P team.confign team.configy team.configs team.configq team.configl team.configd team.config_ team.configd team.configb team.config_ team.configt team.config[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K/var/www/html/index.html
+chcon: failed to change context of ‘/var/www/html/index.html’ to ‘unconfined_u:object_r:nysqld_db_t:s0’: Invalid argument
+]0;root@linux:~/worklog[root@linux worklog]# chcon -t nysqld_db_t /var/www/html/index.html[1P[1@m
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# chcon -t mysqld_db_t /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pls -lZ[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+-rw-r--r--. root root unconfined_u:object_r:mysqld_db_t:s0 /var/www/html/index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14@chcon -t mysqld_db_t[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pls -lZ[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewall-cmd --add-service=https[K[8Plist-all[1Preload list-all[15Pifconfigls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cifconfig[Kls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pcat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Purl localhost
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Apache HTTP Server Test Page powered by CentOS</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Bootstrap -->
+    <link href="/noindex/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="noindex/css/open-sans.css" type="text/css" />
+
+<style type="text/css"><!--		 
+
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-weight: 100;
+  color: #ccc;
+  background: rgba(10, 24, 55, 1);
+  font-size: 16px;
+}
+
+h2, h3, h4 {
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  color: #333;
+  background: rgb(212,212,221); /* Old browsers */
+  background: radial-gradient(ellipse at center top, rgba(255,255,255,1) 0%,rgba(174,174,183,1) 100%); /* W3C */
+}
+
+.jumbotron h1 {
+  font-size: 128px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0px 2px 0px #abc,
+               0px 4px 10px rgba(0,0,0,0.15),
+               0px 5px 2px rgba(0,0,0,0.1),
+               0px 6px 30px rgba(0,0,0,0.1);
+}
+
+.jumbotron p {
+  font-size: 28px;
+  font-weight: 100;
+}
+
+.main {
+   background: white;
+   color: #234;
+   border-top: 1px solid rgba(0,0,0,0.12);
+   padding-top: 30px;
+   padding-bottom: 40px;
+}
+
+.footer {
+   border-top: 1px solid rgba(255,255,255,0.2);
+   padding-top: 30px;
+}
+
+    --></style>
+</head>
+<body>
+  <div class="jumbotron text-center">
+    <div class="container">
+   	  <h1>Testing 123..</h1>
+  		<p class="lead">This page is used to test the proper operation of the <a href="http://apache.org">Apache HTTP server</a> after it has been installed. If you can read this page it means that this site is working properly. This server is powered by <a href="http://centos.org">CentOS</a>.</p>
+		</div>
+  </div>
+  <div class="main">
+    <div class="container">
+       <div class="row">
+  			<div class="col-sm-6">
+    			<h2>Just visiting?</h2>
+			  		<p class="lead">The website you just visited is either experiencing problems or is undergoing routine maintenance.</p>
+  					<p>If you would like to let the administrators of this website know that you've seen this page instead of the page you expected, you should send them e-mail. In general, mail sent to the name "webmaster" and directed to the website's domain should reach the appropriate person.</p>
+  					<p>For example, if you experienced problems while visiting www.example.com, you should send e-mail to "webmaster@example.com".</p>
+	  			</div>
+  				<div class="col-sm-6">
+	  				<h2>Are you the Administrator?</h2>
+		  			<p>You should add your website content to the directory <tt>/var/www/html/</tt>.</p>
+		  			<p>To prevent this page from ever being used, follow the instructions in the file <tt>/etc/httpd/conf.d/welcome.conf</tt>.</p>
+
+	  				<h2>Promoting Apache and CentOS</h2>
+			  		<p>You are free to use the images below on Apache and CentOS Linux powered HTTP servers.  Thanks for using Apache and CentOS!</p>
+				  	<p><a href="http://httpd.apache.org/"><img src="images/apache_pb.gif" alt="[ Powered by Apache ]"></a> <a href="http://www.centos.org/"><img src="images/poweredby.png" alt="[ Powered by CentOS Linux ]" height="31" width="88"></a></p>
+  				</div>
+	  		</div>
+	    </div>
+		</div>
+	</div>
+	  <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">          
+            <h2>Important note:</h2>
+            <p class="lead">The CentOS Project has nothing to do with this website or its content,
+            it just provides the software that makes the website run.</p>
+            
+            <p>If you have issues with the content of this site, contact the owner of the domain, not the CentOS project. 
+            Unless you intended to visit CentOS.org, the CentOS Project does not have anything to do with this website,
+            the content or the lack of it.</p>
+            <p>For example, if this website is www.example.com, you would find the owner of the example.com domain at the following WHOIS server:</p>
+            <p><a href="http://www.internic.net/whois.html">http://www.internic.net/whois.html</a></p>
+          </div>
+          <div class="col-sm-6">
+            <h2>The CentOS Project</h2>
+            <p>The CentOS Linux distribution is a stable, predictable, manageable and reproduceable platform derived from 
+               the sources of Red Hat Enterprise Linux (RHEL).<p>
+            
+            <p>Additionally to being a popular choice for web hosting, CentOS also provides a rich platform for open source communities to build upon. For more information
+               please visit the <a href="http://www.centos.org/">CentOS website</a>.</p>
+          </div>
+        </div>
+		  </div>
+    </div>
+  </div>
+</body></html>
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# curl localhostls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14@chcon -t mysqld_db_t[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pls -lZ[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewall-cmd --add-service=https[K[8Plist-all[1Preload list-all[15Pifconfigls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pcat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Purl localhostat /var/www/html/index.html 
+test http
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# cat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Purl localhostls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14@chcon -t mysqld_db_t[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pls -lZ[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfirewall-cmd --add-service=https[K[8Plist-all[1Preload list-all[15Pifconfigls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pcat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Purl localhostsystemctl status httpd[1Prt[C[C[C[C[C[Cecho "test http" > /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[27Pls /var/www/htmlsemanage fcontext -l | grep http | wc -l[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16Pls /var/www/htmlsemanage fcontext -l | grep http | wc -l./[K[2Pls -lZ ./team.config [4@restorecon[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K/var/www/html/index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# restorecon /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pcat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Purl localhostls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pcurl localhost
+test http
+]0;root@linux:~/worklog[root@linux worklog]# curl localhostrestorecon /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pcat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Purl localhostls -lZ /var/www/html/index.html
+-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/html/index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pcurl localhostrestorecon /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pcat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Purl localhostls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14@chcon -t mysqld_db_t[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pls -lZ[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pcurl localhostat /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crestorecon /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[21Pcurl localhostls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ksemanage fcontext -a -t mysqld_db_t 'va[K[K/var/www/html(/.*)?'
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -Z[KlZ /var/www/html/index.html 
+-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/html/index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -lZ /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csemanage fcontext -a -t mysqld_db_t '/var/www/html(/.*)?'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[26Pls -lZ /var/www/html/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pcurl localhost
+test http
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# # w[K지금은 기본값만 적용했기에 아직 실제 경로에 반여이 [K[K[K영이 안된 상태 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# # 지금은 기본값만 적용했기에 아직 실제 경로에 반영이 안된 상태 [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl localhost[Kls -lZ /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csemanage fcontext -a -t mysqld_db_t '/var/www/html(/.*)?'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[25Pls -lZ /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pcurl localhost# 지금은 기본값만 적용했기에 아직 실제 경로에 반영이 안된 상태 [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Krestorecon -R /var/www/html/
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# restorecon -R /var/www/html/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C# 지금은 기본값만 적용했기에 아직 실제 경로에 반영이 안된 상태 [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl localhost[Kls -lZ /var/www/html/index.html 
+-rw-r--r--. root root unconfined_u:object_r:mysqld_db_t:s0 /var/www/html/index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -lZ /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kls -lZ /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Prestorecon -R /var/www/html/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C# 지금은 기본값만 적용했기에 아직 실제 경로에 반영이 안된 상태 [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl localhost[Kls -lZ /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csemanage fcontext -a -t mysqld_db_t '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'[1P '/var/www/html(/.*)?'h '/var/www/html(/.*)?'t '/var/www/html(/.*)?'t '/var/www/html(/.*)?'p '/var/www/html(/.*)?'d '/var/www/html(/.*)?'_ '/var/www/html(/.*)?'s '/var/www/html(/.*)?'y '/var/www/html(/.*)?'s '/var/www/html(/.*)?'_ '/var/www/html(/.*)?'c '/var/www/html(/.*)?'o '/var/www/html(/.*)?'n '/var/www/html(/.*)?'t '/var/www/html(/.*)?'e '/var/www/html(/.*)?'n '/var/www/html(/.*)?'t '/var/www/html(/.*)?'_ '/var/www/html(/.*)?'t '/var/www/html(/.*)?'
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage fcontext -a -t httpd_sys_content_t '/var/www/html(/.*)?'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pls -lZ /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Prestorecon -R /var/www/html/
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# restorecon -R /var/www/html/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csemanage fcontext -a -t httpd_sys_content_t '/var/www/html(/.*)?'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pls -lZ /var/www/html/index.html 
+-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/html/index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# touch fileA [K
+]0;root@linux:~/worklog[root@linux worklog]# mv fileA /var/www/html/
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# mv fileA /var/www/html/[12Ptouch fileAmv fileA /var/www/html/[12Ptouch fileAls -lZ /var/www/html/index.html [K[K[K[K[K[K[K[K[K[K[K
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 fileA
+-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -lZ /var/www/html/[2@mv fileA[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Ptouch fileAls -lZ /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Prestorecon -R /var/www/html/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csemanage fcontext -a -t httpd_sys_content_t '/var/www/html(/.*)?'
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage fcontext -a -t httpd_sys_content_t '/var/www/html(/.*)?'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -lZ /var/www/html/[K
+-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 fileA
+-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# ls -lZ /var/www/html/semanage fcontext -a -t httpd_sys_content_t '/var/www/html(/.*)?'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -lZ /var/www/html/[K[2@mv fileA[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Ptouch fileAls -lZ /var/www/html/index.html [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Prestorecon -R /var/www/html/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csemanage fcontext -a -t httpd_sys_content_t '/var/www/html(/.*)?'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[37Prestorecon -R /var/www/html/
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# restorecon -R /var/www/html/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pls -lZ[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 fileA
+-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 index.html
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage port -l | grep http
+[01;31m[Khttp[m[K_cache_port_t              tcp      8080, 8118, 8123, 10001-10010
+[01;31m[Khttp[m[K_cache_port_t              udp      3130
+[01;31m[Khttp[m[K_port_t                    tcp      80, 81, 443, 488, 8008, 8009, 8443, 9000
+pegasus_[01;31m[Khttp[m[K_port_t            tcp      5988
+pegasus_[01;31m[Khttp[m[Ks_port_t           tcp      5989
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage port --help
+usage: semanage port [-h] [-n] [-N] [-S STORE] [ --add -t TYPE -p PROTOCOL -r RANGE ( port_name | port_range ) | --delete -p PROTOCOL ( port_name | port_range ) | --deleteall  | --extract  | --list -C | --modify -t TYPE -p PROTOCOL -r RANGE ( port_name | port_range ) ]
+
+positional arguments:
+  port                  port | port_range
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -C, --locallist       List port local customizations
+  -n, --noheading       Do not print heading when listing port object types
+  -N, --noreload        Do not reload policy after commit
+  -S STORE, --store STORE
+                        Select an alternate SELinux Policy Store to manage
+  -a, --add             Add a record of the port object type
+  -d, --delete          Delete a record of the port object type
+  -m, --modify          Modify a record of the port object type
+  -l, --list            List records of the port object type
+  -E, --extract         Extract customizable commands, for use within a
+                        transaction
+  -D, --deleteall       Remove all port objects local customizations
+  -t TYPE, --type TYPE  SELinux Type for the object
+  -r RANGE, --range RANGE
+                        MLS/MCS Security Range (MLS/MCS Systems only) SELinux
+                        Range for SELinux login mapping defaults to the
+                        SELinux user record range.
+  -p PROTO, --proto PROTO
+                        Protocol for the specified port (tcp|udp) or internet
+                        protocol version for the specified node (ipv4|ipv6).
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semag[Knage port -a t[K-t http_port_t 8888 p[K-p tcp
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage port -a -t http_port_t 8888 -p tcp-help[Kl | grep http[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pls -lZ /var/www/html/semanage port -l | grep http
+[01;31m[Khttp[m[K_cache_port_t              tcp      8080, 8118, 8123, 10001-10010
+[01;31m[Khttp[m[K_cache_port_t              udp      3130
+[01;31m[Khttp[m[K_port_t                    tcp      8888, 80, 81, 443, 488, 8008, 8009, 8443, 9000
+pegasus_[01;31m[Khttp[m[K_port_t            tcp      5988
+pegasus_[01;31m[Khttp[m[Ks_port_t           tcp      5989
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage port -l | grep httpㅇ[Ka -t http_port_t 8888 -p tcp[1P[1@d
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage port -d -t http_port_t 8888 -p tcp[15Pl | grep http
+[01;31m[Khttp[m[K_cache_port_t              tcp      8080, 8118, 8123, 10001-10010
+[01;31m[Khttp[m[K_cache_port_t              udp      3130
+[01;31m[Khttp[m[K_port_t                    tcp      80, 81, 443, 488, 8008, 8009, 8443, 9000
+pegasus_[01;31m[Khttp[m[K_port_t            tcp      5988
+pegasus_[01;31m[Khttp[m[Ks_port_t           tcp      5989
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage boolean -l | wc -l
+318
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# semanage boolean -l | wc -l[K[K[K[K[Kgrep http
+[01;31m[Khttp[m[Kd_can_network_relay        (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can network relay
+[01;31m[Khttp[m[Kd_can_connect_mythtv       (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can connect mythtv
+[01;31m[Khttp[m[Kd_can_network_connect_db   (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can network connect db
+[01;31m[Khttp[m[Kd_use_gpg                  (off  ,  off)  Allow [01;31m[Khttp[m[Kd to use gpg
+[01;31m[Khttp[m[Kd_dbus_sssd                (off  ,  off)  Allow [01;31m[Khttp[m[Kd to dbus sssd
+[01;31m[Khttp[m[Kd_enable_cgi               (on   ,   on)  Allow [01;31m[Khttp[m[Kd to enable cgi
+[01;31m[Khttp[m[Kd_verify_dns               (off  ,  off)  Allow [01;31m[Khttp[m[Kd to verify dns
+[01;31m[Khttp[m[Kd_dontaudit_search_dirs    (off  ,  off)  Allow [01;31m[Khttp[m[Kd to dontaudit search dirs
+[01;31m[Khttp[m[Kd_use_cifs                 (off  ,  off)  Allow [01;31m[Khttp[m[Kd to use cifs
+[01;31m[Khttp[m[Kd_manage_ipa               (off  ,  off)  Allow [01;31m[Khttp[m[Kd to manage ipa
+[01;31m[Khttp[m[Kd_run_stickshift           (off  ,  off)  Allow [01;31m[Khttp[m[Kd to run stickshift
+[01;31m[Khttp[m[Kd_enable_homedirs          (off  ,  off)  Allow [01;31m[Khttp[m[Kd to enable homedirs
+[01;31m[Khttp[m[Kd_dbus_avahi               (off  ,  off)  Allow [01;31m[Khttp[m[Kd to dbus avahi
+[01;31m[Khttp[m[Kd_unified                  (off  ,  off)  Allow [01;31m[Khttp[m[Kd to unified
+[01;31m[Khttp[m[Kd_mod_auth_pam             (off  ,  off)  Allow [01;31m[Khttp[m[Kd to mod auth pam
+[01;31m[Khttp[m[Kd_can_network_connect      (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can network connect
+[01;31m[Khttp[m[Kd_execmem                  (off  ,  off)  Allow [01;31m[Khttp[m[Kd to execmem
+[01;31m[Khttp[m[Kd_use_fusefs               (off  ,  off)  Allow [01;31m[Khttp[m[Kd to use fusefs
+[01;31m[Khttp[m[Kd_mod_auth_ntlm_winbind    (off  ,  off)  Allow [01;31m[Khttp[m[Kd to mod auth ntlm winbind
+[01;31m[Khttp[m[Kd_use_sasl                 (off  ,  off)  Allow [01;31m[Khttp[m[Kd to use sasl
+[01;31m[Khttp[m[Kd_tty_comm                 (off  ,  off)  Allow [01;31m[Khttp[m[Kd to tty comm
+[01;31m[Khttp[m[Kd_sys_script_anon_write    (off  ,  off)  Allow [01;31m[Khttp[m[Kd to sys script anon write
+[01;31m[Khttp[m[Kd_graceful_shutdown        (on   ,   on)  Allow [01;31m[Khttp[m[Kd to graceful shutdown
+[01;31m[Khttp[m[Kd_can_connect_ftp          (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can connect ftp
+[01;31m[Khttp[m[Kd_run_ipa                  (off  ,  off)  Allow [01;31m[Khttp[m[Kd to run ipa
+prosody_bind_[01;31m[Khttp[m[K_port         (off  ,  off)  Allow prosody to bind [01;31m[Khttp[m[K port
+[01;31m[Khttp[m[Kd_read_user_content        (off  ,  off)  Allow [01;31m[Khttp[m[Kd to read user content
+[01;31m[Khttp[m[Kd_use_nfs                  (off  ,  off)  Allow [01;31m[Khttp[m[Kd to use nfs
+[01;31m[Khttp[m[Kd_can_connect_zabbix       (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can connect zabbix
+[01;31m[Khttp[m[Kd_tmp_exec                 (off  ,  off)  Allow [01;31m[Khttp[m[Kd to tmp exec
+[01;31m[Khttp[m[Kd_run_preupgrade           (off  ,  off)  Allow [01;31m[Khttp[m[Kd to run preupgrade
+[01;31m[Khttp[m[Kd_can_sendmail             (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can sendmail
+[01;31m[Khttp[m[Kd_builtin_scripting        (on   ,   on)  Allow [01;31m[Khttp[m[Kd to builtin scripting
+[01;31m[Khttp[m[Kd_can_connect_ldap         (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can connect ldap
+[01;31m[Khttp[m[Kd_can_check_spam           (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can check spam
+named_tcp_bind_[01;31m[Khttp[m[K_port       (off  ,  off)  Allow named to tcp bind [01;31m[Khttp[m[K port
+[01;31m[Khttp[m[Kd_can_network_memcache     (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can network memcache
+[01;31m[Khttp[m[Kd_can_network_connect_cobbler (off  ,  off)  Allow [01;31m[Khttp[m[Kd to can network connect cobbler
+[01;31m[Khttp[m[Kd_anon_write               (off  ,  off)  Allow [01;31m[Khttp[m[Kd to anon write
+[01;31m[Khttp[m[Kd_serve_cobbler_files      (off  ,  off)  Allow [01;31m[Khttp[m[Kd to serve cobbler files
+[01;31m[Khttp[m[Kd_ssi_exec                 (off  ,  off)  Allow [01;31m[Khttp[m[Kd to ssi exec
+[01;31m[Khttp[m[Kd_use_openstack            (off  ,  off)  Allow [01;31m[Khttp[m[Kd to use openstack
+[01;31m[Khttp[m[Kd_enable_ftp_server        (off  ,  off)  Allow [01;31m[Khttp[m[Kd to enable ftp server
+[01;31m[Khttp[m[Kd_setrlimit                (off  ,  off)  Allow [01;31m[Khttp[m[Kd to setrlimit
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# host
+Usage: host [-aCdilrTvVw] [-c class] [-N ndots] [-t type] [-W time]
+            [-R number] [-m flag] hostname [server]
+       -a is equivalent to -v -t ANY
+       -c specifies query class for non-IN data
+       -C compares SOA records on authoritative nameservers
+       -d is equivalent to -v
+       -i IP6.INT reverse lookups
+       -l lists all hosts in a domain, using AXFR
+       -m set memory debugging flag (trace|record|usage)
+       -N changes the number of dots allowed before root lookup is done
+       -r disables recursive processing
+       -R specifies number of retries for UDP packets
+       -s a SERVFAIL response should stop query
+       -t specifies the query type
+       -T enables TCP/IP mode
+       -v enables verbose output
+       -V print version number and exit
+       -w specifies to wait forever for a reply
+       -W specifies how long to wait for a reply
+       -4 use IPv4 query transport only
+       -6 use IPv6 query transport only
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# host www.naver.com
+www.naver.com is an alias for www.naver.com.nheos.com.
+www.naver.com.nheos.com has address 223.130.195.95
+www.naver.com.nheos.com has address 223.130.195.200
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# host www.naver.com[K[K[K[K[K[K[K[K[K[K[K[K[Kgoogle.com
+google.com has address 142.250.207.46
+google.com has IPv6 address 2404:6800:4004:824::200e
+google.com mail is handled by 20 alt1.aspmx.l.google.com.
+google.com mail is handled by 30 alt2.aspmx.l.google.com.
+google.com mail is handled by 10 aspmx.l.google.com.
+google.com mail is handled by 50 alt4.aspmx.l.google.com.
+google.com mail is handled by 40 alt3.aspmx.l.google.com.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# host google.com 8.8.8.8
+Using domain server:
+Name: 8.8.8.8
+Address: 8.8.8.8#53
+Aliases: 
+
+google.com has address 142.250.207.14
+google.com has IPv6 address 2404:6800:4004:81e::200e
+google.com mail is handled by 50 alt4.aspmx.l.google.com.
+google.com mail is handled by 20 alt1.aspmx.l.google.com.
+google.com mail is handled by 40 alt3.aspmx.l.google.com.
+google.com mail is handled by 10 aspmx.l.google.com.
+google.com mail is handled by 30 alt2.aspmx.l.google.com.
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# host --help
+host: illegal option -- -
+Usage: host [-aCdilrTvVw] [-c class] [-N ndots] [-t type] [-W time]
+            [-R number] [-m flag] hostname [server]
+       -a is equivalent to -v -t ANY
+       -c specifies query class for non-IN data
+       -C compares SOA records on authoritative nameservers
+       -d is equivalent to -v
+       -i IP6.INT reverse lookups
+       -l lists all hosts in a domain, using AXFR
+       -m set memory debugging flag (trace|record|usage)
+       -N changes the number of dots allowed before root lookup is done
+       -r disables recursive processing
+       -R specifies number of retries for UDP packets
+       -s a SERVFAIL response should stop query
+       -t specifies the query type
+       -T enables TCP/IP mode
+       -v enables verbose output
+       -V print version number and exit
+       -w specifies to wait forever for a reply
+       -W specifies how long to wait for a reply
+       -4 use IPv4 query transport only
+       -6 use IPv6 query transport only
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# 
+]0;root@linux:~/worklog[root@linux worklog]# yu[K[Kexit
+
+Script done on Tue 25 Jan 2022 04:50:29 PM KST
