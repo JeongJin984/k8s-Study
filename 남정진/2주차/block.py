@@ -1,29 +1,31 @@
-stack1 = []
-stack2 = []
+max_block = int(input())
 
-stack2_len = int(input())
+stack1_top = 0
+stack2_top = 0
 
+stack1 = [0]
 answer = 0
-for i in range(2 * stack2_len):
+for i in range(max_block * 2):
     user_input = input().split(" ")
     command = user_input[0]
-
     if command == "add":
-        num = int(user_input[1])
-        stack1.append(num)
-    else:
-        if len(stack2) == 0:
-            if stack1[-1] == 1:
-                stack2.append(stack1.pop())
+        stack1_top = int(user_input[1])
+        stack1.append(stack1_top)
+    else:                                   # target number MUST contain in stack1
+        if stack1_top == stack2_top + 1:
+            if len(stack1) == 0:
+                stack2_top += 1
+                stack1_top = stack2_top + 1
             else:
-                stack1.sort(reverse=True)
-                answer += 1
-                stack2.append(stack1.pop())
-        elif stack2[-1] + 1 == stack1[-1]:
-            stack2.append(stack1.pop())
+                stack2_top = stack1.pop()
+                if len(stack1) == 0:
+                    stack1_top = stack2_top + 1
+                else:
+                    stack1_top = stack1[-1]
         else:
-            stack1.sort(reverse=True)
+            stack1 = []
             answer += 1
-            stack2.append(stack1.pop())
+            stack2_top += 1
+            stack1_top = stack2_top + 1
 
 print(answer)
